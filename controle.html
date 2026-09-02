@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#005CA9">
+  <title>Controle — SENAI Lab</title>
+  <link rel="stylesheet" href="controle.css">
+</head>
+<body>
+  <header class="mobile-head">
+    <div class="mobile-brand"><span>SENAI</span><b>Lab</b></div>
+    <div id="connectionBadge" class="connection-badge">Desconectado</div>
+  </header>
+
+  <main class="controller-shell">
+    <section id="joinView" class="join-card">
+      <span class="eyebrow">Modo apresentador</span>
+      <h1>Controle os slides pelo celular.</h1>
+      <p>No notebook, toque no botão <strong>📱</strong>. Depois digite aqui o código exibido na tela.</p>
+      <label for="sessionInput">Código da sessão</label>
+      <input id="sessionInput" maxlength="6" inputmode="text" autocomplete="off" placeholder="ABC123">
+      <button id="connectBtn" class="connect-btn">Conectar à apresentação</button>
+      <small>O código vale somente para esta apresentação.</small>
+    </section>
+
+    <section id="presenterView" class="presenter-view" hidden>
+      <div class="presenter-meta">
+        <span id="slidePosition">Slide 1 de 11</span>
+        <span id="timer">00:00</span>
+      </div>
+      <div class="mobile-progress"><span id="mobileProgress"></span></div>
+
+      <article class="speaker-card">
+        <span class="speaker-label">Sua fala</span>
+        <h2 id="speakerTitle">Abertura</h2>
+        <p id="speakerText"></p>
+        <div class="talk-points">
+          <strong>Se quiser resumir:</strong>
+          <ul id="speakerPoints"></ul>
+        </div>
+      </article>
+
+      <div class="session-row">
+        <span>Sessão <b id="sessionLabel"></b></span>
+        <button id="disconnectBtn">Desconectar</button>
+      </div>
+    </section>
+  </main>
+
+  <nav id="mobileControls" class="mobile-controls" hidden>
+    <button id="homeBtn" aria-label="Primeiro slide">⌂</button>
+    <button id="prevBtn" class="main-control">← Voltar</button>
+    <button id="nextBtn" class="main-control primary">Próximo →</button>
+  </nav>
+
+  <script src="controle.js"></script>
+</body>
+</html>
