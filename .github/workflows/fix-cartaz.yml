@@ -17,13 +17,14 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Instalar ImageMagick
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y imagemagick
+
       - name: Converter PNG para JPEG real
         run: |
-          if command -v magick >/dev/null 2>&1; then
-            magick assets/cartaz-acesso.png -background white -alpha remove -alpha off -quality 90 assets/cartaz-acesso.jpg
-          else
-            convert assets/cartaz-acesso.png -background white -alpha remove -alpha off -quality 90 assets/cartaz-acesso.jpg
-          fi
+          convert assets/cartaz-acesso.png -background white -alpha remove -alpha off -quality 90 assets/cartaz-acesso.jpg
           file assets/cartaz-acesso.jpg
 
       - name: Salvar arquivo corrigido
