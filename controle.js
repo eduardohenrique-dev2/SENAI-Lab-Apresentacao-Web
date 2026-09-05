@@ -14,18 +14,18 @@ const notes=[
   },
   {
     title:'Como funciona no geral',
-    text:'O fluxo é bem direto. A pessoa registra o que precisa, o sistema gera um protocolo e a equipe recebe essa demanda. Depois a gente analisa, define responsável, equipamento e andamento, até chegar na produção e na conclusão do atendimento.',
-    points:['Solicitação','Protocolo automático','Análise da equipe','Produção e conclusão']
+    text:'O fluxo é bem direto. O colaborador registra o que precisa usando o e-mail corporativo da FIEMG, o sistema gera um protocolo e a equipe recebe essa demanda. Depois a gente analisa, atualiza status, prioridade e equipamento, até chegar na produção e na conclusão do atendimento.',
+    points:['Solicitação com e-mail FIEMG','Protocolo automático','Análise da equipe','Produção e conclusão']
   },
   {
     title:'Como o solicitante usa',
-    text:'Para quem vai solicitar, eu procurei deixar o processo bem simples. Não precisa criar conta. A pessoa informa os dados principais, explica o que precisa, coloca quantidade e data e, se tiver algum arquivo do projeto, já consegue anexar junto.',
-    points:['Sem criação de conta','Formulário curto e objetivo','Arquivos podem ir junto com o pedido']
+    text:'Para quem vai solicitar, eu procurei deixar o processo bem simples. Não precisa criar conta, mas a nova demanda é exclusiva para colaboradores FIEMG. O sistema aceita somente e-mail corporativo terminado em @fiemg.com.br. Depois a pessoa explica o que precisa, informa quantidade e data e pode anexar arquivos do projeto.',
+    points:['Sem criação de conta','Somente @fiemg.com.br','Formulário curto e objetivo','Arquivos podem ir junto com o pedido']
   },
   {
     title:'Como acompanhar',
-    text:'Depois de enviar, a pessoa recebe um protocolo. Com esse protocolo e o mesmo e-mail usado na solicitação, ela consegue consultar o andamento. Isso evita aquela necessidade de ficar perguntando toda hora se já foi analisado ou se já entrou em produção.',
-    points:['Consulta por protocolo + e-mail','Não precisa login','Mais autonomia para quem solicitou']
+    text:'Depois de enviar, a pessoa recebe um protocolo. Com esse protocolo e o mesmo e-mail corporativo usado na solicitação, ela consegue consultar o andamento. Isso evita aquela necessidade de ficar perguntando toda hora se já foi analisado ou se já entrou em produção.',
+    points:['Consulta por protocolo + e-mail','Mesmo e-mail corporativo do envio','Mais autonomia para quem solicitou']
   },
   {
     title:'Área da equipe',
@@ -34,8 +34,8 @@ const notes=[
   },
   {
     title:'Gestão de cada demanda',
-    text:'Dentro de cada pedido, a equipe consegue atualizar o que realmente importa para a operação. A gente define o status, a prioridade, quem vai ficar responsável e qual equipamento será usado. Assim essas informações não ficam dependendo de conversa ou da memória de alguém.',
-    points:['Status','Prioridade','Responsável','Equipamento']
+    text:'Dentro de cada pedido, qualquer integrante autorizado consegue atualizar o que realmente importa para a operação. A gente define status, prioridade e equipamento. Em vez de existir um responsável fixo, o histórico registra quem realizou cada mudança, com a ação e o momento em que ela aconteceu.',
+    points:['Status','Prioridade','Equipamento','Histórico identifica quem alterou']
   },
   {
     title:'Fila de produção',
@@ -44,18 +44,18 @@ const notes=[
   },
   {
     title:'Comunicação e histórico',
-    text:'Outra coisa importante é não perder o contexto do atendimento. As mudanças ficam registradas no histórico e algumas atualizações são enviadas por e-mail. Também existe o cuidado com privacidade, porque a pessoa recebe o aviso antes de enviar os dados.',
-    points:['Notificações por e-mail','Histórico das alterações','Aviso de privacidade']
+    text:'Outra coisa importante é não perder o contexto do atendimento. As mudanças ficam registradas no histórico com o usuário que executou cada ação, e algumas atualizações são enviadas por e-mail. Também existe o cuidado com privacidade, porque a pessoa recebe o aviso antes de enviar os dados.',
+    points:['Notificações por e-mail','Histórico por ação e usuário','Aviso de privacidade']
   },
   {
     title:'Fechamento',
-    text:'No fim, a proposta é bem simples: facilitar para quem solicita e dar mais clareza para quem gerencia. Em vez de ter informação espalhada, a gente passa a ter demanda, responsável, andamento e histórico reunidos no mesmo lugar.',
-    points:['Mais organização','Acompanhamento mais claro','Menos controle paralelo']
+    text:'No fim, a proposta é bem simples: oferecer um canal interno para os colaboradores FIEMG e dar mais clareza para quem gerencia. Em vez de informação espalhada, a gente passa a ter demanda, andamento, equipamento e histórico reunidos no mesmo lugar.',
+    points:['Uso interno FIEMG','Mais organização','Acompanhamento mais claro','Menos controle paralelo']
   },
   {
     title:'Acesso ao sistema',
-    text:'E para fechar, aqui está o acesso direto. Quem quiser usar a plataforma pode apontar a câmera para o QR Code e entrar no sistema. A partir dali já consegue abrir uma nova solicitação ou acompanhar uma que já foi enviada.',
-    points:['Escanear o QR Code','Abrir uma solicitação','Acompanhar uma demanda existente']
+    text:'E para fechar, aqui está o acesso direto. O colaborador FIEMG pode apontar a câmera para o QR Code e entrar no sistema. Para abrir uma nova solicitação, é obrigatório usar o e-mail corporativo @fiemg.com.br. Depois, o mesmo e-mail junto com o protocolo permite acompanhar a demanda.',
+    points:['Escanear o QR Code','Usar e-mail @fiemg.com.br','Abrir uma solicitação','Acompanhar uma demanda existente']
   }
 ];
 
