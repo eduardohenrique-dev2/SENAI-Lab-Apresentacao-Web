@@ -1,0 +1,102 @@
+.skip-link{
+  position:fixed;
+  left:18px;
+  top:12px;
+  z-index:10000;
+  transform:translateY(-160%);
+  padding:10px 14px;
+  border-radius:10px;
+  background:#071D2F;
+  color:#fff;
+  font-weight:800;
+  transition:transform .2s ease;
+}
+.skip-link:focus{transform:translateY(0)}
+
+:focus-visible{
+  outline:3px solid #F5A623;
+  outline-offset:3px;
+}
+
+button,a{touch-action:manipulation}
+button:disabled{cursor:not-allowed}
+body.modal-open{overflow:hidden}
+
+.fake-submit{
+  width:100%;
+  border:0;
+  border-radius:11px;
+  padding:14px;
+  background:#F5A623;
+  font-weight:800;
+  color:#fff;
+  margin-top:8px;
+  text-align:center;
+  user-select:none;
+}
+
+.top-actions button,
+.controls button,
+.remote-control-btn,
+.remote-actions button,
+.remote-actions a,
+.remote-close,
+.access-link,
+.final-copy>a{
+  transition:transform .18s ease,box-shadow .18s ease,background-color .18s ease,opacity .18s ease;
+}
+
+@media (hover:hover){
+  .top-actions button:hover,
+  .controls button:not(:disabled):hover,
+  .remote-control-btn:hover,
+  .remote-actions button:hover,
+  .remote-actions a:hover,
+  .access-link:hover,
+  .final-copy>a:hover{transform:translateY(-2px)}
+}
+
+.slide:focus{outline:none}
+.dash-line em{max-width:180px;text-align:center;line-height:1.25}
+.remote-modal-backdrop[aria-hidden="true"]{pointer-events:none}
+.remote-modal-backdrop.open[aria-hidden="false"]{pointer-events:auto}
+
+@media(max-width:1050px){
+  .people{flex-wrap:wrap}
+  .stats{grid-template-columns:repeat(2,1fr)}
+}
+
+@media(max-width:650px){
+  .stats{grid-template-columns:1fr 1fr}
+  .dash-line{grid-template-columns:1fr;align-items:start}
+  .dash-line em{justify-self:start;max-width:none}
+  .people{flex-wrap:wrap}
+  .remote-modal{padding:22px 18px}
+  .remote-actions{display:grid;grid-template-columns:1fr}
+  .remote-actions button,.remote-actions a{text-align:center}
+}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto!important}
+  *,*::before,*::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+  .reveal{opacity:1!important;transform:none!important}
+  .shot-frame{transform:none!important}
+}
+
+@media print{
+  .topbar,.progress,.dots,.controls,.remote-modal-backdrop{display:none!important}
+  html,body{background:#fff;scroll-snap-type:none}
+  .slide{
+    min-height:100vh;
+    height:auto;
+    page-break-after:always;
+    break-after:page;
+    padding:52px;
+  }
+  .reveal{opacity:1!important;transform:none!important}
+}

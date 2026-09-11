@@ -4,32 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#005CA9">
+  <meta name="description" content="Controle remoto da apresentação do SENAI Lab.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="color-scheme" content="light">
   <title>Controle — SENAI Lab</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="controle.css">
+  <link rel="stylesheet" href="controle-enhancements.css">
 </head>
 <body>
   <header class="mobile-head">
-    <div class="mobile-brand"><img src="assets/logo-senai-lab.svg" alt="SENAI Lab" style="display:block;width:128px;height:auto"></div>
-    <div id="connectionBadge" class="connection-badge">Desconectado</div>
+    <div class="mobile-brand"><img src="assets/logo-senai-lab.svg" alt="SENAI Lab" width="128" height="41" style="display:block;width:128px;height:auto"></div>
+    <div id="connectionBadge" class="connection-badge" role="status" aria-live="polite">Desconectado</div>
   </header>
 
   <main class="controller-shell">
-    <section id="joinView" class="join-card">
+    <section id="joinView" class="join-card" aria-labelledby="joinTitle">
       <span class="eyebrow">Modo apresentador</span>
-      <h1>Controle os slides pelo celular.</h1>
+      <h1 id="joinTitle">Controle os slides pelo celular.</h1>
       <p>No notebook, toque no botão <strong>📱</strong>. Depois digite aqui o código exibido na tela.</p>
       <label for="sessionInput">Código da sessão</label>
-      <input id="sessionInput" maxlength="6" inputmode="text" autocomplete="off" placeholder="ABC123">
-      <button id="connectBtn" class="connect-btn">Conectar à apresentação</button>
-      <small>O código vale somente para esta apresentação.</small>
+      <input id="sessionInput" maxlength="6" minlength="4" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABC123" aria-describedby="sessionHelp">
+      <button id="connectBtn" type="button" class="connect-btn">Conectar à apresentação</button>
+      <small id="sessionHelp">O código vale somente para esta apresentação.</small>
     </section>
 
-    <section id="presenterView" class="presenter-view" hidden>
+    <section id="presenterView" class="presenter-view" hidden aria-label="Notas do apresentador">
       <div class="presenter-meta">
-        <span id="slidePosition">Slide 1 de 11</span>
-        <span id="timer">00:00</span>
+        <span id="slidePosition" aria-live="polite">Slide 1 de 11</span>
+        <span id="timer" aria-label="Tempo de apresentação">00:00</span>
       </div>
-      <div class="mobile-progress"><span id="mobileProgress"></span></div>
+      <div class="mobile-progress" aria-hidden="true"><span id="mobileProgress"></span></div>
 
       <article class="speaker-card">
         <span class="speaker-label">Sua fala</span>
@@ -43,17 +49,18 @@
 
       <div class="session-row">
         <span>Sessão <b id="sessionLabel"></b></span>
-        <button id="disconnectBtn">Desconectar</button>
+        <button id="disconnectBtn" type="button">Desconectar</button>
       </div>
     </section>
   </main>
 
-  <nav id="mobileControls" class="mobile-controls" hidden>
-    <button id="homeBtn" aria-label="Primeiro slide">⌂</button>
-    <button id="prevBtn" class="main-control">← Voltar</button>
-    <button id="nextBtn" class="main-control primary">Próximo →</button>
+  <nav id="mobileControls" class="mobile-controls" hidden aria-label="Controles dos slides">
+    <button id="homeBtn" type="button" aria-label="Primeiro slide">⌂</button>
+    <button id="prevBtn" type="button" class="main-control">← Voltar</button>
+    <button id="nextBtn" type="button" class="main-control primary">Próximo →</button>
   </nav>
 
   <script src="controle.js"></script>
+  <script src="presenter-notes.js"></script>
 </body>
 </html>

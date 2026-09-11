@@ -1,0 +1,64 @@
+name: Quality checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate JavaScript syntax
+        run: |
+          node --check script.js
+          node --check controle.js
+          node --check enhancements.js
+          node --check presenter-notes.js
+
+      - name: Validate HTML structure
+        run: |
+          python - <<'PY'
+          from html.parser import HTMLParser
+          from pathlib import Path
+
+          class SlideCounter(HTMLParser):
+              def __init__(self):
+                  super().__init__()
+                  self.slides = 0
+              def handle_starttag(self, tag, attrs):
+                  if tag != 'section':
+                      return
+                  attrs = dict(attrs)
+                  classes = attrs.get('class', '').split()
+                  if 'slide' in classes:
+                      self.slides += 1
+
+          for filename in ('index.html', 'controle.html'):
+              parser = HTMLParser()
+              parser.feed(Path(filename).read_text(encoding='utf-8'))
+
+          counter = SlideCounter()
+          counter.feed(Path('index.html').read_text(encoding='utf-8'))
+          if counter.slides != 11:
+              raise SystemExit(f'Esperados 11 slides, encontrados {counter.slides}.')
+          print('HTML OK — 11 slides encontrados.')
+          PY
+
+      - name: Validate Vercel configuration
+        run: node -e "JSON.parse(require('fs').readFileSync('vercel.json','utf8')); console.log('vercel.json OK')"
+
+      - name: Check for privileged credential patterns
+        run: |
+          if grep -RIE 'sb_secret_|service_role|BREVO_API_KEY|SUPABASE_SERVICE_ROLE' . \
+            --exclude-dir=.git --exclude='quality.yml'; then
+            echo 'Foi encontrado um padrão de credencial privilegiada no repositório.'
+            exit 1
+          fi
+          echo 'Nenhum padrão de credencial privilegiada encontrado.'

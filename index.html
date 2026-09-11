@@ -4,133 +4,143 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0067B1">
-  <title>SENAI Lab — Apresentação</title>
   <meta name="description" content="Apresentação do Sistema de Gestão de Demandas do SENAI Lab — SENAI Afonso Greco.">
+  <meta property="og:title" content="SENAI Lab — Sistema de Gestão de Demandas">
+  <meta property="og:description" content="Conheça o fluxo de solicitações, triagem, produção e acompanhamento do SENAI Lab.">
+  <meta property="og:type" content="website">
+  <meta name="color-scheme" content="light">
+  <title>SENAI Lab — Apresentação</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="presenter.css">
+  <link rel="stylesheet" href="enhancements.css">
 </head>
 <body>
-  <header class="topbar">
-    <a class="brand" href="#s1" aria-label="SENAI Lab — voltar ao início"><img src="assets/logo-senai-lab.svg" alt="SENAI Lab" class="brand-logo"></a>
+  <a class="skip-link" href="#s1">Pular para a apresentação</a>
+
+  <header class="topbar" aria-label="Controles da apresentação">
+    <a class="brand" href="#s1" aria-label="SENAI Lab — voltar ao início"><img src="assets/logo-senai-lab.svg" alt="SENAI Lab" class="brand-logo" width="154" height="50"></a>
     <span class="unit">SENAI Afonso Greco</span>
-    <div class="top-actions"><span id="slideCounter">01 / 11</span><button id="fullscreenBtn" aria-label="Tela cheia">⛶</button></div>
+    <div class="top-actions"><span id="slideCounter" aria-live="polite">01 / 11</span><button id="fullscreenBtn" type="button" aria-label="Entrar em tela cheia" aria-pressed="false" title="Tela cheia (F)">⛶</button></div>
   </header>
 
-  <div class="progress"><span id="progressBar"></span></div>
-  <nav class="dots" aria-label="Slides">
-    <a href="#s1" class="active" aria-label="Slide 1"></a><a href="#s2" aria-label="Slide 2"></a><a href="#s3" aria-label="Slide 3"></a><a href="#s4" aria-label="Slide 4"></a><a href="#s5" aria-label="Slide 5"></a><a href="#s6" aria-label="Slide 6"></a><a href="#s7" aria-label="Slide 7"></a><a href="#s8" aria-label="Slide 8"></a><a href="#s9" aria-label="Slide 9"></a><a href="#s10" aria-label="Slide 10"></a><a href="#s11" aria-label="Slide 11"></a>
+  <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+  <nav class="dots" aria-label="Navegação pelos slides">
+    <a href="#s1" class="active" aria-label="Slide 1" aria-current="true"></a><a href="#s2" aria-label="Slide 2"></a><a href="#s3" aria-label="Slide 3"></a><a href="#s4" aria-label="Slide 4"></a><a href="#s5" aria-label="Slide 5"></a><a href="#s6" aria-label="Slide 6"></a><a href="#s7" aria-label="Slide 7"></a><a href="#s8" aria-label="Slide 8"></a><a href="#s9" aria-label="Slide 9"></a><a href="#s10" aria-label="Slide 10"></a><a href="#s11" aria-label="Slide 11"></a>
   </nav>
 
-  <main>
-    <section class="slide cover" id="s1">
+  <main id="apresentacao">
+    <section class="slide cover" id="s1" tabindex="-1">
       <div class="cover-copy reveal">
         <p class="kicker">Sistema de Gestão de Demandas</p>
         <h1>Uma forma mais simples de organizar o dia a dia do SENAI Lab.</h1>
-        <p class="lead">Centraliza pedidos, acompanhamento e gestão da equipe em um único lugar.</p>
+        <p class="lead">Centraliza solicitações, autorização, acompanhamento e operação da equipe em um único fluxo.</p>
         <div class="tagline">Conectando pessoas, ideias e fabricação.</div>
       </div>
       <div class="cover-shot reveal delay">
-        <div class="shot-frame"><img src="assets/capa-sistema.jpg" alt="Tela inicial real do sistema SENAI Lab"></div>
+        <div class="shot-frame"><img src="assets/capa-sistema.jpg" alt="Tela inicial real do sistema SENAI Lab" width="1280" height="720" decoding="async" fetchpriority="high"></div>
         <span class="shot-label">Tela inicial do sistema</span>
       </div>
     </section>
 
-    <section class="slide" id="s2">
+    <section class="slide" id="s2" tabindex="-1">
       <div class="intro reveal">
         <p class="kicker">Por que a plataforma existe?</p>
         <h2>Menos informação espalhada. Mais organização.</h2>
-        <p class="lead">Quando cada pedido chega por um caminho diferente, acompanhar tudo fica mais difícil. A plataforma reúne o processo em um só fluxo.</p>
+        <p class="lead">Quando cada pedido chega por um caminho diferente, acompanhar tudo fica mais difícil. A plataforma reúne o processo em um só fluxo, com critérios claros desde a entrada até a entrega.</p>
       </div>
       <div class="before-after reveal delay">
         <article class="before"><small>ANTES</small><strong>Mensagens, e-mails e pedidos soltos</strong><p>Difícil saber o que chegou, o que já foi alterado e em que etapa está.</p></article>
-        <div class="arrow">→</div>
-        <article class="after"><small>AGORA</small><strong>Uma plataforma única</strong><p>Cada solicitação entra registrada, recebe protocolo e pode ser acompanhada até a conclusão.</p></article>
+        <div class="arrow" aria-hidden="true">→</div>
+        <article class="after"><small>AGORA</small><strong>Uma plataforma única</strong><p>Cada solicitação fica registrada, recebe protocolo, passa por autorização e pode ser acompanhada até a conclusão.</p></article>
       </div>
     </section>
 
-    <section class="slide" id="s3">
-      <div class="intro reveal"><p class="kicker">Visão geral</p><h2>O fluxo é simples do começo ao fim.</h2><p class="lead">O colaborador registra o que precisa. A equipe analisa, organiza a produção e atualiza o andamento.</p></div>
+    <section class="slide" id="s3" tabindex="-1">
+      <div class="intro reveal"><p class="kicker">Visão geral</p><h2>O fluxo é simples e tem uma etapa clara de autorização.</h2><p class="lead">O colaborador registra o que precisa. A Administração faz a triagem e, somente depois de autorizada, a demanda entra na operação da equipe do Lab.</p></div>
       <div class="journey reveal delay">
-        <article><span>01</span><b>Solicitar</b><p>Colaborador FIEMG registra a necessidade.</p></article><i>→</i>
-        <article><span>02</span><b>Receber protocolo</b><p>O sistema cria um LAB-XXXX.</p></article><i>→</i>
-        <article><span>03</span><b>Equipe analisar</b><p>Status, prioridade e equipamento.</p></article><i>→</i>
-        <article><span>04</span><b>Produzir</b><p>A demanda entra no fluxo do Lab.</p></article><i>→</i>
-        <article><span>05</span><b>Concluir</b><p>O solicitante acompanha a evolução.</p></article>
+        <article><span>01</span><b>Solicitar</b><p>Colaborador FIEMG registra a necessidade.</p></article><i aria-hidden="true">→</i>
+        <article><span>02</span><b>Receber protocolo</b><p>O sistema identifica a solicitação com LAB-XXXX.</p></article><i aria-hidden="true">→</i>
+        <article><span>03</span><b>Autorizar</b><p>A Administração analisa e autoriza ou recusa.</p></article><i aria-hidden="true">→</i>
+        <article><span>04</span><b>Operar</b><p>A equipe recebe somente demandas autorizadas.</p></article><i aria-hidden="true">→</i>
+        <article><span>05</span><b>Concluir</b><p>Produção, histórico e acompanhamento até a entrega.</p></article>
       </div>
     </section>
 
-    <section class="slide two-col" id="s4">
+    <section class="slide two-col" id="s4" tabindex="-1">
       <div class="reveal">
         <p class="kicker">Para quem solicita</p>
         <h2>Abrir uma demanda leva poucos minutos.</h2>
         <p class="lead">Não precisa criar conta. O acesso para novas solicitações é exclusivo para colaboradores FIEMG e exige o e-mail corporativo <strong>@fiemg.com.br</strong>.</p>
         <div class="mini-list"><span>Nome e e-mail @fiemg.com.br</span><span>Tipo de serviço</span><span>Descrição do que precisa</span><span>Quantidade e data</span><span>Arquivos do projeto</span></div>
       </div>
-      <div class="fake-form reveal delay">
+      <div class="fake-form reveal delay" aria-label="Exemplo visual do formulário de solicitação">
         <div class="form-head"><strong>Nova solicitação</strong><span>FIEMG</span></div>
         <label>E-mail corporativo<div>nome@fiemg.com.br</div></label>
         <label>Serviço<div>Prototipagem</div></label>
         <label>Descreva sua necessidade<div class="textarea">Preciso produzir uma peça para apresentação...</div></label>
         <div class="form-row"><label>Quantidade<div>1</div></label><label>Data<div>01/10/2026</div></label></div>
-        <button>Enviar solicitação</button>
+        <div class="fake-submit" aria-hidden="true">Enviar solicitação</div>
       </div>
     </section>
 
-    <section class="slide two-col" id="s5">
+    <section class="slide two-col" id="s5" tabindex="-1">
       <div class="reveal">
         <p class="kicker">Acompanhamento</p>
         <h2>Depois do envio, a pessoa não fica no escuro.</h2>
-        <p class="lead">Com o protocolo e o mesmo e-mail corporativo usado no cadastro, ela consulta o andamento sem precisar entrar em contato com a equipe toda hora.</p>
+        <p class="lead">Com o protocolo e o mesmo e-mail corporativo usado no cadastro, ela consulta o andamento sem precisar entrar em contato com a equipe toda hora — inclusive enquanto aguarda a autorização inicial.</p>
         <div class="protocol-pill">LAB-0001</div>
       </div>
-      <div class="status-track reveal delay"><span class="done">Novo</span><i></i><span class="done">Em análise</span><i></i><span class="active">Aprovado</span><i></i><span>Em produção</span><i></i><span>Finalizado</span></div>
+      <div class="status-track reveal delay" aria-label="Exemplo do andamento de uma demanda"><span class="done">Solicitação enviada</span><i aria-hidden="true"></i><span class="active">Aguardando autorização</span><i aria-hidden="true"></i><span>Em análise</span><i aria-hidden="true"></i><span>Em produção</span><i aria-hidden="true"></i><span>Finalizado</span></div>
     </section>
 
-    <section class="slide two-col" id="s6">
+    <section class="slide two-col" id="s6" tabindex="-1">
       <div class="reveal">
-        <p class="kicker">Área da equipe</p>
-        <h2>Quem trabalha no Lab enxerga o que realmente precisa.</h2>
-        <p class="lead">O acesso é individual e restrito. O painel mostra rapidamente as demandas abertas, em análise, em produção e finalizadas.</p>
-        <div class="people"><span>Eduardo</span><span>Lucas</span><span>Jonathan</span></div>
+        <p class="kicker">Acesso interno</p>
+        <h2>Cada perfil enxerga somente o que precisa para trabalhar.</h2>
+        <p class="lead">O acesso é individual e autenticado. A Administração faz a triagem das novas solicitações; a equipe operacional trabalha apenas com as demandas já autorizadas.</p>
+        <div class="people"><span>Administração</span><span>Equipe do Lab</span><span>Acesso autenticado</span></div>
       </div>
-      <div class="mini-dashboard reveal delay"><header><b>Dashboard</b><small>Área interna</small></header><div class="stats"><article><small>Abertas</small><strong>1</strong></article><article><small>Em análise</small><strong>0</strong></article><article><small>Em produção</small><strong>0</strong></article><article><small>Finalizadas</small><strong>0</strong></article></div><div class="dash-line"><span>LAB-0001</span><b>Prototipagem</b><em>Aprovado</em></div></div>
+      <div class="mini-dashboard reveal delay"><header><b>Fluxo interno</b><small>Triagem + operação</small></header><div class="stats"><article><small>Aguardando decisão</small><strong>1</strong></article><article><small>Em análise</small><strong>0</strong></article><article><small>Em produção</small><strong>0</strong></article><article><small>Finalizadas</small><strong>0</strong></article></div><div class="dash-line"><span>LAB-0001</span><b>Prototipagem</b><em>Aguardando autorização</em></div></div>
     </section>
 
-    <section class="slide" id="s7">
-      <div class="intro reveal"><p class="kicker">Gestão da demanda</p><h2>Cada pedido tem um lugar claro dentro da operação.</h2><p class="lead">Qualquer integrante autorizado pode atuar na demanda, e o sistema registra no histórico quem realizou cada alteração.</p></div>
-      <div class="manage-grid reveal delay"><article><span>STATUS</span><b>Aprovado</b></article><article><span>PRIORIDADE</span><b>Alta</b></article><article><span>EQUIPAMENTO</span><b>BAMBU-01</b></article><article><span>HISTÓRICO</span><b>Alterado por Eduardo</b></article></div>
+    <section class="slide" id="s7" tabindex="-1">
+      <div class="intro reveal"><p class="kicker">Gestão da demanda</p><h2>Depois da autorização, cada pedido entra com clareza na operação.</h2><p class="lead">Qualquer integrante autorizado da equipe pode atuar na demanda, e o sistema registra no histórico quem realizou cada alteração.</p></div>
+      <div class="manage-grid reveal delay"><article><span>STATUS</span><b>Em análise</b></article><article><span>PRIORIDADE</span><b>Alta</b></article><article><span>EQUIPAMENTO</span><b>BAMBU-01</b></article><article><span>HISTÓRICO</span><b>Ação identificada</b></article></div>
       <p class="caption reveal delay2">As alterações ficam vinculadas à solicitação com data, ação realizada e usuário que executou a mudança.</p>
     </section>
 
-    <section class="slide two-col" id="s8">
-      <div class="reveal"><p class="kicker">Fila de produção</p><h2>Quando o equipamento é o mesmo, existe uma ordem definida.</h2><p class="lead">Para demandas do mesmo equipamento e da mesma data, quem solicitou primeiro fica na frente. É uma regra simples e fácil de explicar.</p><div class="rule">mesmo equipamento + mesma data = ordem de criação</div></div>
-      <div class="queue reveal delay"><article><strong>01</strong><span>LAB-0001</span></article><article><strong>02</strong><span>LAB-0002</span></article><article><strong>03</strong><span>LAB-0003</span></article><article><strong>04</strong><span>LAB-0004</span></article></div>
+    <section class="slide two-col" id="s8" tabindex="-1">
+      <div class="reveal"><p class="kicker">Fila de produção</p><h2>Quando o equipamento é o mesmo, existe uma ordem definida.</h2><p class="lead">Para demandas do mesmo equipamento e da mesma data, quem solicitou primeiro fica na frente. É uma regra simples, objetiva e fácil de explicar.</p><div class="rule">mesmo equipamento + mesma data = ordem de criação</div></div>
+      <div class="queue reveal delay" aria-label="Exemplo de fila de produção"><article><strong>01</strong><span>LAB-0001</span></article><article><strong>02</strong><span>LAB-0002</span></article><article><strong>03</strong><span>LAB-0003</span></article><article><strong>04</strong><span>LAB-0004</span></article></div>
     </section>
 
-    <section class="slide" id="s9">
-      <div class="intro reveal"><p class="kicker">Comunicação e histórico</p><h2>O sistema ajuda a equipe a não perder contexto.</h2><p class="lead">Mudanças importantes ficam registradas e o solicitante pode receber atualizações por e-mail durante o andamento.</p></div>
-      <div class="three-points reveal delay"><article><span>01</span><b>Notificações</b><p>Atualizações importantes chegam por e-mail.</p></article><article><span>02</span><b>Histórico</b><p>O sistema registra a ação e quem realizou cada alteração.</p></article><article><span>03</span><b>Privacidade</b><p>O usuário recebe o aviso e confirma a ciência antes do envio.</p></article></div>
+    <section class="slide" id="s9" tabindex="-1">
+      <div class="intro reveal"><p class="kicker">Comunicação, histórico e controle</p><h2>O sistema ajuda a equipe a não perder contexto.</h2><p class="lead">Decisões e mudanças importantes ficam registradas, o solicitante pode receber atualizações por e-mail e o acesso interno é separado por nível de permissão.</p></div>
+      <div class="three-points reveal delay"><article><span>01</span><b>Notificações</b><p>Atualizações importantes podem chegar por e-mail ao longo do atendimento.</p></article><article><span>02</span><b>Histórico</b><p>O sistema registra a ação e quem realizou cada alteração ou decisão.</p></article><article><span>03</span><b>Privacidade e acesso</b><p>Dados, anexos e áreas internas seguem regras próprias de acesso e autorização.</p></article></div>
     </section>
 
-    <section class="slide final" id="s10">
-      <div class="final-copy reveal"><p class="kicker light">Resultado</p><h2>Uma ferramenta simples para deixar o Lab mais organizado.</h2><p class="lead light">A proposta é facilitar para os colaboradores FIEMG que solicitam e dar mais clareza para quem gerencia.</p><div class="final-points"><span>Uso interno FIEMG</span><span>Demandas centralizadas</span><span>Acompanhamento claro</span><span>Histórico por ação</span></div><a href="https://senai-lab-afonso-greco.vercel.app/" target="_blank" rel="noopener">Acessar o sistema ↗</a></div>
+    <section class="slide final" id="s10" tabindex="-1">
+      <div class="final-copy reveal"><p class="kicker light">Resultado</p><h2>Uma ferramenta simples para deixar o Lab mais organizado.</h2><p class="lead light">A proposta é facilitar para os colaboradores FIEMG que solicitam e dar mais clareza e controle para quem faz a triagem e para quem executa.</p><div class="final-points"><span>Uso interno FIEMG</span><span>Triagem administrativa</span><span>Demandas centralizadas</span><span>Acompanhamento claro</span><span>Histórico por ação</span></div><a href="https://senai-lab-afonso-greco.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar o sistema ↗</a></div>
       <div class="final-mark reveal delay"><span class="senai big">SENAI</span><span class="lab big">Lab</span><small>Conectando pessoas, ideias e fabricação.</small></div>
     </section>
 
-    <section class="slide access-slide" id="s11">
+    <section class="slide access-slide" id="s11" tabindex="-1">
       <div class="access-copy reveal">
         <p class="kicker">Agora é só acessar</p>
         <h2>Conheça o SENAI Lab na prática.</h2>
         <p class="lead">Colaboradores FIEMG podem apontar a câmera para o QR Code e registrar uma solicitação usando o e-mail corporativo @fiemg.com.br.</p>
-        <a class="access-link" href="https://senai-lab-afonso-greco.vercel.app/" target="_blank" rel="noopener">senai-lab-afonso-greco.vercel.app ↗</a>
+        <a class="access-link" href="https://senai-lab-afonso-greco.vercel.app/" target="_blank" rel="noopener noreferrer">senai-lab-afonso-greco.vercel.app ↗</a>
       </div>
       <div class="poster-frame reveal delay">
-        <img src="assets/cartaz-acesso.jpg" alt="Cartaz de acesso ao SENAI Lab com QR Code">
+        <img src="assets/cartaz-acesso.jpg" alt="Cartaz de acesso ao SENAI Lab com QR Code" width="768" height="1086" loading="lazy" decoding="async">
       </div>
     </section>
   </main>
 
-  <div class="controls"><button id="prevSlide" aria-label="Slide anterior">←</button><button id="nextSlide" aria-label="Próximo slide">→</button></div>
-  <script src="script.js"></script>
+  <div class="controls" aria-label="Avançar ou voltar slides"><button id="prevSlide" type="button" aria-label="Slide anterior">←</button><button id="nextSlide" type="button" aria-label="Próximo slide">→</button></div>
+  <script src="script.js" defer></script>
+  <script src="enhancements.js" defer></script>
 </body>
 </html>

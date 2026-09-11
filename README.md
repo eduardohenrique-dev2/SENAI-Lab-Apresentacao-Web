@@ -1,62 +1,92 @@
 # SENAI Lab — Apresentação Web
 
-Apresentação web institucional do **Sistema de Gestão de Demandas do SENAI Lab — SENAI Afonso Greco**.
+Apresentação web do **Sistema de Gestão de Demandas do SENAI Lab — SENAI Afonso Greco**.
 
-## Objetivo
+A apresentação acompanha o fluxo atual do sistema em produção:
 
-Explicar de forma simples:
+**Solicitação → protocolo → triagem da Administração → autorização → operação da equipe → conclusão.**
 
-- o que é a plataforma;
-- como o solicitante abre e acompanha uma demanda;
-- como a equipe acessa e gerencia o atendimento;
-- como funciona a fila de produção;
-- como o sistema organiza comunicação, histórico e privacidade.
+## O que a apresentação mostra
+
+- abertura de demandas por colaboradores com e-mail `@fiemg.com.br`;
+- protocolo para acompanhamento sem criação de conta;
+- triagem administrativa antes da operação;
+- equipe interna trabalhando somente com demandas autorizadas;
+- status, prioridade, equipamento e histórico por ação;
+- fila de produção;
+- notificações, privacidade e separação de acessos;
+- acesso direto ao sistema por link e QR Code.
+
+A apresentação pública não expõe áreas exclusivas de gestão avançada do sistema.
 
 ## Recursos
 
-- 11 seções em formato de slides;
-- HTML + CSS + JavaScript;
-- identidade visual SENAI em azul, branco e laranja;
-- tela real do sistema na abertura;
-- cartaz com QR Code no slide final;
-- teclas de seta, PageUp/PageDown, Home e End;
-- tecla **F** para tela cheia;
-- tecla **C** para abrir o controle pelo celular;
-- contador de slides e barra de progresso;
-- layout responsivo;
-- link direto para o sistema oficial.
+- 11 slides responsivos;
+- HTML + CSS + JavaScript puro;
+- identidade visual SENAI Lab;
+- navegação por teclado, botões e pontos laterais;
+- teclas **F** para tela cheia e **C** para controle pelo celular;
+- contador e barra de progresso;
+- suporte a `prefers-reduced-motion`;
+- modo de impressão;
+- melhorias de acessibilidade por teclado e leitores de tela;
+- controle remoto com falas do apresentador;
+- sincronização em tempo real usando Supabase Realtime;
+- cabeçalhos de segurança para deploy na Vercel;
+- verificação automática de qualidade no GitHub Actions.
 
 ## Modo apresentador pelo celular
 
-A apresentação possui um controle remoto em `controle.html`.
-
-1. Abra `index.html` no notebook/projetor.
-2. Clique no botão **📱** no topo ou pressione **C**.
-3. A apresentação cria um código de sessão e mostra um QR Code.
+1. Abra `index.html` no notebook ou projetor.
+2. Clique no botão **📱** ou pressione **C**.
+3. A apresentação gera um código de sessão e um QR Code.
 4. No celular, escaneie o QR Code ou abra `controle.html` e informe o código.
-5. O celular passa a mostrar a fala do slide atual e os botões **Voltar** e **Próximo**.
-6. Ao mudar o slide pelo celular, o notebook/projetor acompanha em tempo real.
+5. O celular mostra a fala correspondente ao slide atual e os controles **Voltar** e **Próximo**.
+6. As mudanças feitas no celular são refletidas na apresentação em tempo real.
 
-A sincronização usa **Supabase Realtime** e não altera as demandas do sistema.
+O controle remoto usa somente a configuração pública necessária ao Supabase Realtime e não acessa as demandas do sistema principal.
 
-## Como executar
+## Atalhos
 
-Basta abrir `index.html` em um navegador moderno. Para controlar de outro dispositivo, publique o projeto na Vercel ou em outro host HTTPS e abra os dois dispositivos pela mesma versão publicada.
+- `→`, `↓`, `PageDown` ou `Espaço`: próximo slide;
+- `←`, `↑` ou `PageUp`: slide anterior;
+- `Home`: primeiro slide;
+- `End`: último slide;
+- `F`: entrar ou sair da tela cheia;
+- `C`: abrir o controle pelo celular;
+- `Esc`: fechar a janela do controle remoto.
+
+## Estrutura
+
+- `index.html` — conteúdo principal da apresentação;
+- `styles.css` — estilos base dos slides;
+- `presenter.css` — estilos do modo apresentador e acesso final;
+- `enhancements.css` — acessibilidade, responsividade e refinamentos;
+- `script.js` — navegação e sincronização original;
+- `enhancements.js` — reforços de navegação, acessibilidade e sessão remota;
+- `controle.html` — controle mobile;
+- `controle.css` — estilos do controle;
+- `controle-enhancements.css` — refinamentos do controle mobile;
+- `controle.js` — conexão e comandos em tempo real;
+- `presenter-notes.js` — falas atualizadas do apresentador;
+- `vercel.json` — cabeçalhos de segurança do deploy;
+- `.github/workflows/quality.yml` — verificações automáticas;
+- `assets/` — logo, captura do sistema e cartaz de acesso.
+
+## Executar localmente
+
+Para visualizar somente os slides, um servidor estático simples é suficiente. Exemplo com Python:
+
+```bash
+python -m http.server 8080
+```
+
+Depois acesse `http://localhost:8080`.
+
+Para usar o controle remoto em dispositivos diferentes, publique a apresentação em um host HTTPS, como a Vercel.
 
 ## Sistema oficial
 
 https://senai-lab-afonso-greco.vercel.app/
-
-## Estrutura
-
-- `index.html` — conteúdo dos slides;
-- `styles.css` — estilos principais;
-- `presenter.css` — cartaz final e interface de conexão do celular;
-- `script.js` — navegação, tela cheia e sincronização da apresentação;
-- `controle.html` — tela do apresentador no celular;
-- `controle.css` — visual mobile do controle;
-- `controle.js` — falas e comandos em tempo real;
-- `assets/capa-sistema.jpg` — tela real usada na abertura;
-- `assets/cartaz-acesso.jpg` — cartaz com QR Code usado no encerramento.
 
 > SENAI Lab — Conectando pessoas, ideias e fabricação.
