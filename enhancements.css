@@ -22,6 +22,54 @@ button,a{touch-action:manipulation}
 button:disabled{cursor:not-allowed}
 body.modal-open{overflow:hidden}
 
+/* O logo do topo usa apenas o <img>; presenter.css também aplicava o SVG como background. */
+.brand{
+  width:auto!important;
+  height:42px!important;
+  display:flex!important;
+  align-items:center!important;
+  background:none!important;
+}
+.brand-logo{
+  display:block;
+  width:154px;
+  height:auto;
+  max-height:42px;
+  object-fit:contain;
+}
+
+/* O slide 10 é par e herdava o fundo branco de .slide:nth-child(even).
+   Esta regra mais específica restaura o fechamento escuro e melhora o contraste. */
+.slide.final{
+  background:
+    radial-gradient(circle at 82% 24%,rgba(0,103,177,.34),transparent 34%),
+    linear-gradient(120deg,#061D30 0%,#073F69 68%,#0067B1 100%);
+  color:#fff;
+}
+.slide.final h2{color:#fff}
+.slide.final .kicker,
+.slide.final .kicker.light{
+  color:#9FD5FA!important;
+  opacity:1;
+}
+.slide.final .lead,
+.slide.final .lead.light{
+  color:#E2EEF6!important;
+  opacity:1;
+}
+.slide.final .final-points span{
+  background:rgba(255,255,255,.12);
+  border-color:rgba(255,255,255,.28);
+  color:#fff;
+}
+.slide.final .final-mark small{
+  color:#E4F0F7;
+  font-weight:600;
+}
+.slide.final .final-copy>a{
+  box-shadow:0 14px 36px rgba(0,0,0,.22);
+}
+
 .fake-submit{
   width:100%;
   border:0;
@@ -67,6 +115,8 @@ body.modal-open{overflow:hidden}
 }
 
 @media(max-width:650px){
+  .brand{height:34px!important}
+  .brand-logo{width:126px;max-height:34px}
   .stats{grid-template-columns:1fr 1fr}
   .dash-line{grid-template-columns:1fr;align-items:start}
   .dash-line em{justify-self:start;max-width:none}
