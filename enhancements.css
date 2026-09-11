@@ -38,36 +38,110 @@ body.modal-open{overflow:hidden}
   object-fit:contain;
 }
 
-/* O slide 10 é par e herdava o fundo branco de .slide:nth-child(even).
-   Esta regra mais específica restaura o fechamento escuro e melhora o contraste. */
-.slide.final{
+/* Tema visual global da apresentação: o fundo azul profundo do slide de resultado
+   agora é aplicado em todos os slides, com contraste reforçado nos textos soltos. */
+body{
+  background:#061D30;
+}
+.slide,
+.slide:nth-child(even),
+.slide.cover,
+.slide.final,
+.slide.access-slide{
   background:
-    radial-gradient(circle at 82% 24%,rgba(0,103,177,.34),transparent 34%),
-    linear-gradient(120deg,#061D30 0%,#073F69 68%,#0067B1 100%);
+    radial-gradient(circle at 84% 24%,rgba(0,103,177,.34),transparent 34%),
+    radial-gradient(circle at 18% 88%,rgba(0,75,135,.22),transparent 38%),
+    linear-gradient(120deg,#061D30 0%,#073F69 68%,#0067B1 100%)!important;
   color:#fff;
 }
-.slide.final h2{color:#fff}
-.slide.final .kicker,
-.slide.final .kicker.light{
+.slide h1,
+.slide h2{
+  color:#fff;
+  text-shadow:0 2px 18px rgba(0,0,0,.14);
+}
+.slide .kicker,
+.slide .kicker.light{
   color:#9FD5FA!important;
   opacity:1;
 }
-.slide.final .lead,
-.slide.final .lead.light{
+.slide .lead,
+.slide .lead.light{
   color:#E2EEF6!important;
   opacity:1;
 }
-.slide.final .final-points span{
+.slide .tagline,
+.slide .caption,
+.slide .shot-label,
+.slide .final-mark small{
+  color:#E4F0F7!important;
+  opacity:1;
+}
+.slide .tagline{
+  border-left-color:#F5A623;
+}
+
+/* Blocos claros continuam claros, preservando leitura e hierarquia. */
+.slide .before,
+.slide .journey article,
+.slide .fake-form,
+.slide .status-track span,
+.slide .mini-dashboard,
+.slide .manage-grid article,
+.slide .queue article,
+.slide .three-points article,
+.slide .poster-frame{
+  color:#122033;
+}
+.slide .before p,
+.slide .journey p,
+.slide .fake-form label,
+.slide .mini-dashboard header small,
+.slide .three-points p{
+  color:#536b7e;
+}
+.slide .after{
+  background:#071D2F;
+  color:#fff;
+  border-color:rgba(255,255,255,.12)!important;
+}
+.slide .after p{
+  color:#D6E5EF;
+}
+.slide .mini-list span,
+.slide .people span{
+  background:rgba(255,255,255,.96);
+  border-color:rgba(255,255,255,.45);
+  color:#31495D;
+}
+.slide .rule{
+  background:#E9F4FB;
+  color:#004B87;
+}
+.slide .protocol-pill{
+  background:#E7F3FB;
+  color:#0067B1;
+}
+.slide .final-points span{
   background:rgba(255,255,255,.12);
   border-color:rgba(255,255,255,.28);
   color:#fff;
 }
-.slide.final .final-mark small{
-  color:#E4F0F7;
-  font-weight:600;
-}
-.slide.final .final-copy>a{
+.slide .final-copy>a{
   box-shadow:0 14px 36px rgba(0,0,0,.22);
+}
+.slide .shot-frame,
+.slide .fake-form,
+.slide .mini-dashboard,
+.slide .poster-frame{
+  box-shadow:0 30px 80px rgba(0,0,0,.28);
+}
+
+/* Navegação lateral continua visível sobre qualquer slide escuro. */
+.dots a{
+  background:rgba(255,255,255,.48);
+}
+.dots a.active{
+  background:#F5A623;
 }
 
 .fake-submit{
