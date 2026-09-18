@@ -15,7 +15,6 @@ O projeto deixou de apresentar somente o **Sistema de Gestão de Demandas** e pa
 - Gestão de Demandas;
 - SENAI Lab Vision;
 - SENAI Lab Inventário;
-- Central do Proprietário;
 - Administração de Notícias;
 - Usuários e Permissões;
 - proteção das áreas internas por módulo;
@@ -25,7 +24,7 @@ O projeto deixou de apresentar somente o **Sistema de Gestão de Demandas** e pa
 
 ### Portal Afonso Greco
 
-Centraliza comunicação, descoberta dos módulos, autenticação da Área Interna, autorização central, notícias, permissões e a Central do Proprietário.
+Centraliza comunicação, descoberta dos módulos, autenticação da Área Interna, autorização central, notícias e permissões.
 
 ### Gestão de Demandas
 
@@ -41,9 +40,6 @@ Painel operacional para TV com atualização em tempo real, fallback automático
 
 Rastreabilidade do patrimônio com equipamentos, materiais, componentes, consumíveis, localização física, movimentações, empréstimos, manutenção, QR Code, inventário físico, auditoria, relatórios e importação de planilhas/PDFs com prévia antes da confirmação.
 
-### Central do Proprietário
-
-Área exclusiva para o perfil **Proprietário**, reunindo acessos administrativos de Gestão de Demandas, Vision, Inventário, Notícias e Usuários/Permissões.
 
 ## Autenticação e permissões
 
@@ -53,7 +49,7 @@ A autorização central organiza o acesso, mas os módulos continuam independent
 
 ## Recursos da apresentação
 
-- 11 slides responsivos;
+- 10 slides responsivos;
 - HTML + CSS + JavaScript puro;
 - identidade visual SENAI Lab;
 - navegação por teclado, botões e pontos laterais;
@@ -61,7 +57,7 @@ A autorização central organiza o acesso, mas os módulos continuam independent
 - tecla **C** para controle pelo celular;
 - contador e barra de progresso;
 - modo apresentador;
-- notas atualizadas para os 11 slides;
+- notas atualizadas para os 10 slides;
 - sincronização do controle via Supabase Realtime;
 - suporte a `prefers-reduced-motion`;
 - modo de impressão;
