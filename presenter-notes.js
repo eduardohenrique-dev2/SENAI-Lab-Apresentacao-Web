@@ -38,11 +38,6 @@
       points:['Patrimônio e estoque','Empréstimos e manutenção','QR Code','Importação e auditoria']
     },
     {
-      title:'Central do Proprietário',
-      text:'Para o perfil Proprietário foi criada uma central exclusiva. Em vez de procurar cada área administrativa separadamente, essa página reúne os atalhos para Demandas, Vision, Inventário, notícias e permissões. Outros perfis não enxergam nem acessam essa rota.',
-      points:['Exclusiva para Proprietário','Atalhos de gestão','Demandas, Vision e Inventário','Portal e permissões']
-    },
-    {
       title:'Comunicação e governança',
       text:'O Portal também virou uma camada de comunicação e governança. A Administração de Notícias publica conteúdo da Home, enquanto Usuários e Permissões controla quais módulos cada conta pode visualizar ou administrar.',
       points:['Notícias e destaques','Rascunhos e agendamento','Permissões por módulo','Controle individual por usuário']
