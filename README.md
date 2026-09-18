@@ -1,92 +1,96 @@
-# SENAI Lab — Apresentação Web
+# Portal Afonso Greco + SENAI Lab — Apresentação Web
 
-Apresentação web do **Sistema de Gestão de Demandas do SENAI Lab — SENAI Afonso Greco**.
+Apresentação web do **ecossistema digital Afonso Greco**, atualizada para refletir a estrutura atual em produção.
 
-A apresentação acompanha o fluxo atual do sistema em produção:
+O projeto deixou de apresentar somente o **Sistema de Gestão de Demandas** e passou a mostrar a arquitetura completa:
 
-**Solicitação → protocolo → triagem da Administração → autorização → operação da equipe → conclusão.**
+**Portal Afonso Greco → Área Interna por perfil → módulos SENAI Lab → gestão centralizada.**
 
 ## O que a apresentação mostra
 
-- abertura de demandas por colaboradores com e-mail `@fiemg.com.br`;
-- protocolo para acompanhamento sem criação de conta;
-- triagem administrativa antes da operação;
-- equipe interna trabalhando somente com demandas autorizadas;
-- status, prioridade, equipamento e histórico por ação;
-- fila de produção;
-- notificações, privacidade e separação de acessos;
-- acesso direto ao sistema por link e QR Code.
+- Portal Afonso Greco como porta de entrada institucional;
+- Home pública com notícias;
+- Área Interna autenticada;
+- menu modular por perfil e por usuário;
+- Gestão de Demandas;
+- SENAI Lab Vision;
+- SENAI Lab Inventário;
+- Central do Proprietário;
+- Administração de Notícias;
+- Usuários e Permissões;
+- proteção das áreas internas por módulo;
+- crescimento modular sem transformar todos os sistemas em um único código.
 
-A apresentação pública não expõe áreas exclusivas de gestão avançada do sistema.
+## Estrutura apresentada
 
-## Recursos
+### Portal Afonso Greco
+
+Centraliza comunicação, descoberta dos módulos, autenticação da Área Interna, autorização central, notícias, permissões e a Central do Proprietário.
+
+### Gestão de Demandas
+
+Fluxo: **Solicitação → protocolo → triagem → autorização → operação → acompanhamento.**
+
+A área pública continua simples para quem solicita, enquanto Administração, Equipe e Proprietário possuem áreas próprias.
+
+### SENAI Lab Vision
+
+Painel operacional para TV com atualização em tempo real, fallback automático, quadro por status e categoria, QR Code para acompanhamento e área de gestão separada. A TV permanece somente leitura.
+
+### SENAI Lab Inventário
+
+Rastreabilidade do patrimônio com equipamentos, materiais, componentes, consumíveis, localização física, movimentações, empréstimos, manutenção, QR Code, inventário físico, auditoria, relatórios e importação de planilhas/PDFs com prévia antes da confirmação.
+
+### Central do Proprietário
+
+Área exclusiva para o perfil **Proprietário**, reunindo acessos administrativos de Gestão de Demandas, Vision, Inventário, Notícias e Usuários/Permissões.
+
+## Autenticação e permissões
+
+A Área Interna do Portal monta os módulos disponíveis de acordo com o perfil do usuário e com exceções configuradas individualmente.
+
+A autorização central organiza o acesso, mas os módulos continuam independentes e podem manter suas próprias sessões de autenticação quando necessário.
+
+## Recursos da apresentação
 
 - 11 slides responsivos;
 - HTML + CSS + JavaScript puro;
 - identidade visual SENAI Lab;
 - navegação por teclado, botões e pontos laterais;
-- teclas **F** para tela cheia e **C** para controle pelo celular;
+- tecla **F** para tela cheia;
+- tecla **C** para controle pelo celular;
 - contador e barra de progresso;
+- modo apresentador;
+- notas atualizadas para os 11 slides;
+- sincronização do controle via Supabase Realtime;
 - suporte a `prefers-reduced-motion`;
 - modo de impressão;
-- melhorias de acessibilidade por teclado e leitores de tela;
-- controle remoto com falas do apresentador;
-- sincronização em tempo real usando Supabase Realtime;
-- cabeçalhos de segurança para deploy na Vercel;
-- verificação automática de qualidade no GitHub Actions.
+- cabeçalhos de segurança para Vercel.
 
 ## Modo apresentador pelo celular
 
-1. Abra `index.html` no notebook ou projetor.
+1. Abra a apresentação no notebook ou projetor.
 2. Clique no botão **📱** ou pressione **C**.
-3. A apresentação gera um código de sessão e um QR Code.
-4. No celular, escaneie o QR Code ou abra `controle.html` e informe o código.
-5. O celular mostra a fala correspondente ao slide atual e os controles **Voltar** e **Próximo**.
-6. As mudanças feitas no celular são refletidas na apresentação em tempo real.
+3. A apresentação gera um código e um QR Code.
+4. No celular, abra `controle.html` ou escaneie o QR Code.
+5. O celular mostra a fala correspondente ao slide atual.
+6. Use **Voltar** e **Próximo** para controlar a apresentação.
 
-O controle remoto usa somente a configuração pública necessária ao Supabase Realtime e não acessa as demandas do sistema principal.
+## Links atuais
 
-## Atalhos
+**Portal Afonso Greco**  
+https://portal-afonso-greco.vercel.app/
 
-- `→`, `↓`, `PageDown` ou `Espaço`: próximo slide;
-- `←`, `↑` ou `PageUp`: slide anterior;
-- `Home`: primeiro slide;
-- `End`: último slide;
-- `F`: entrar ou sair da tela cheia;
-- `C`: abrir o controle pelo celular;
-- `Esc`: fechar a janela do controle remoto.
-
-## Estrutura
-
-- `index.html` — conteúdo principal da apresentação;
-- `styles.css` — estilos base dos slides;
-- `presenter.css` — estilos do modo apresentador e acesso final;
-- `enhancements.css` — acessibilidade, responsividade e refinamentos;
-- `script.js` — navegação e sincronização original;
-- `enhancements.js` — reforços de navegação, acessibilidade e sessão remota;
-- `controle.html` — controle mobile;
-- `controle.css` — estilos do controle;
-- `controle-enhancements.css` — refinamentos do controle mobile;
-- `controle.js` — conexão e comandos em tempo real;
-- `presenter-notes.js` — falas atualizadas do apresentador;
-- `vercel.json` — cabeçalhos de segurança do deploy;
-- `.github/workflows/quality.yml` — verificações automáticas;
-- `assets/` — logo, captura do sistema e cartaz de acesso.
-
-## Executar localmente
-
-Para visualizar somente os slides, um servidor estático simples é suficiente. Exemplo com Python:
-
-```bash
-python -m http.server 8080
-```
-
-Depois acesse `http://localhost:8080`.
-
-Para usar o controle remoto em dispositivos diferentes, publique a apresentação em um host HTTPS, como a Vercel.
-
-## Sistema oficial
-
+**Gestão de Demandas**  
 https://senai-lab-afonso-greco.vercel.app/
 
-> SENAI Lab — Conectando pessoas, ideias e fabricação.
+**SENAI Lab Vision**  
+https://senai-lab-vision.vercel.app/
+
+**SENAI Lab Inventário**  
+https://senai-lab-invent-rio.vercel.app/
+
+**Apresentação**  
+https://senai-lab-apresentacao-web.vercel.app/
+
+> SENAI Afonso Greco — informação, serviços e inovação em um só lugar.
