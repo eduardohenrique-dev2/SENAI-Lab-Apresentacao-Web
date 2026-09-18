@@ -3,59 +3,59 @@
 
   const updatedNotes=[
     {
-      title:'Abertura',
-      text:'Pra começar, eu queria mostrar uma solução pensada para organizar o dia a dia do SENAI Lab. A ideia é centralizar as solicitações em um único fluxo, desde o pedido do colaborador até a autorização, a operação da equipe e a conclusão.',
-      points:['Centralizar as solicitações','Organizar autorização e operação','Facilitar o acompanhamento']
+      title:'Abertura — ecossistema atual',
+      text:'Hoje a proposta já vai além do Gestão de Demandas. O que temos é um ecossistema digital do Afonso Greco: o Portal organiza a entrada e a comunicação, enquanto os módulos do SENAI Lab continuam especializados em demandas, supervisão operacional e inventário.',
+      points:['Portal como porta de entrada','Módulos especializados','Acesso organizado por perfil']
     },
     {
-      title:'Por que criar a plataforma?',
-      text:'Quando um pedido chega por mensagem, e-mail, conversa ou de forma presencial, a informação pode ficar espalhada e perder contexto. A plataforma reúne tudo em um único processo, sem deixar o atendimento burocrático.',
-      points:['Menos informação espalhada','Um único canal de entrada','Mais clareza durante o atendimento']
+      title:'Da ferramenta isolada para a plataforma',
+      text:'No início, cada solução era acessada separadamente. A evolução foi criar um Portal que conecta essas ferramentas sem transformar tudo em um sistema monolítico. Cada módulo continua independente, mas a experiência para o usuário passa a ser muito mais organizada.',
+      points:['Menos acessos espalhados','Portal centraliza a experiência','Módulos continuam independentes']
     },
     {
-      title:'Como funciona no geral',
-      text:'O fluxo final ficou bem definido. O colaborador registra a necessidade e recebe um protocolo. A nova demanda vai primeiro para a Administração, que autoriza ou recusa. Somente depois da autorização ela entra na área operacional da equipe do Lab, onde segue para análise, produção e conclusão.',
-      points:['Solicitação e protocolo','Triagem da Administração','Equipe recebe somente o que foi autorizado','Produção e conclusão']
+      title:'Portal Afonso Greco',
+      text:'O Portal possui uma Home pública para informação e notícias da unidade e uma Área Interna para quem precisa trabalhar nos sistemas. Na Área Interna, o menu é montado de acordo com os acessos liberados para o usuário.',
+      points:['Home institucional','Notícias','Área Interna','Menu modular e responsivo']
     },
     {
-      title:'Como o solicitante usa',
-      text:'Para quem vai solicitar, o processo continua simples. Não precisa criar conta, mas novas demandas são exclusivas para colaboradores FIEMG e exigem um e-mail terminado em @fiemg.com.br. A pessoa informa o serviço, explica o que precisa e pode anexar os arquivos do projeto.',
-      points:['Sem criação de conta','Somente @fiemg.com.br','Formulário objetivo','Possibilidade de anexar arquivos']
+      title:'Autenticação e permissões',
+      text:'A autorização central define quais módulos cada pessoa pode visualizar ou administrar. Isso não é apenas esconder botão: os módulos internos também consultam a permissão antes de manter o acesso. Além do padrão por perfil, é possível criar exceções por usuário.',
+      points:['Permissão por perfil','Exceção por usuário','Proteção além da interface','Módulos mantêm suas próprias sessões quando necessário']
     },
     {
-      title:'Como acompanhar',
-      text:'Depois do envio, o solicitante recebe um protocolo. Com esse protocolo e o mesmo e-mail corporativo, consegue consultar o andamento. Enquanto a demanda ainda não foi liberada para a operação, o sistema deixa claro que ela está aguardando autorização.',
-      points:['Consulta por protocolo + e-mail','Status de autorização visível','Mais autonomia para o solicitante']
+      title:'Gestão de Demandas',
+      text:'O Gestão de Demandas continua sendo um dos módulos principais. O colaborador abre uma solicitação, recebe protocolo e acompanha o andamento. A Administração faz a triagem e somente as demandas autorizadas chegam à operação da equipe do SENAI Lab.',
+      points:['Solicitação pública','Protocolo LAB-XXXX','Triagem administrativa','Equipe e área do Proprietário']
     },
     {
-      title:'Acesso interno por perfil',
-      text:'Na área interna, cada pessoa entra com seu próprio acesso e é direcionada para o que precisa fazer. A Administração fica responsável pela triagem das solicitações novas. A equipe do Lab trabalha somente com as demandas que já foram autorizadas.',
-      points:['Acesso individual e autenticado','Administração faz a triagem','Equipe trabalha com demandas autorizadas']
+      title:'SENAI Lab Vision',
+      text:'O Vision leva o fluxo operacional para uma tela de acompanhamento no laboratório. A TV é somente leitura, recebe atualizações em tempo real e possui fallback automático. A edição fica separada em uma área protegida do Proprietário.',
+      points:['Painel TV somente leitura','Tempo real + fallback','Status e categorias','Gestão protegida']
     },
     {
-      title:'Gestão de cada demanda',
-      text:'Depois de autorizada, a demanda entra na operação. A equipe pode atualizar status, prioridade e equipamento. Não existe a necessidade de um responsável fixo, porque o histórico identifica quem realizou cada alteração e quando ela aconteceu.',
-      points:['Status','Prioridade','Equipamento','Histórico identifica cada ação']
+      title:'Inventário',
+      text:'O Inventário amplia a rastreabilidade do laboratório. Ele reúne patrimônio, localização, movimentações, empréstimos, manutenção, QR Code, relatórios e inventário físico. Também existe importação de planilhas e PDFs com prévia antes da confirmação.',
+      points:['Patrimônio e estoque','Empréstimos e manutenção','QR Code','Importação e auditoria']
     },
     {
-      title:'Fila de produção',
-      text:'Também existe uma regra objetiva para organizar a produção. Quando duas demandas usam o mesmo equipamento e estão previstas para a mesma data, quem solicitou primeiro fica na frente da fila.',
-      points:['Mesmo equipamento','Mesma data','Ordem de criação define a fila']
+      title:'Central do Proprietário',
+      text:'Para o perfil Proprietário foi criada uma central exclusiva. Em vez de procurar cada área administrativa separadamente, essa página reúne os atalhos para Demandas, Vision, Inventário, notícias e permissões. Outros perfis não enxergam nem acessam essa rota.',
+      points:['Exclusiva para Proprietário','Atalhos de gestão','Demandas, Vision e Inventário','Portal e permissões']
     },
     {
-      title:'Comunicação, histórico e controle',
-      text:'O sistema mantém o contexto do atendimento. Decisões e mudanças ficam registradas, atualizações importantes podem ser enviadas por e-mail e as áreas internas seguem níveis diferentes de acesso. Isso ajuda a separar triagem, operação e consulta pública.',
-      points:['Notificações por e-mail','Histórico por ação e usuário','Permissões separadas por perfil']
+      title:'Comunicação e governança',
+      text:'O Portal também virou uma camada de comunicação e governança. A Administração de Notícias publica conteúdo da Home, enquanto Usuários e Permissões controla quais módulos cada conta pode visualizar ou administrar.',
+      points:['Notícias e destaques','Rascunhos e agendamento','Permissões por módulo','Controle individual por usuário']
     },
     {
-      title:'Fechamento',
-      text:'No final, a plataforma cria um fluxo mais claro: o colaborador solicita, a Administração autoriza e a equipe executa. Isso reduz controles paralelos e deixa protocolo, andamento, produção e histórico reunidos no mesmo lugar.',
-      points:['Uso interno FIEMG','Triagem antes da operação','Demandas centralizadas','Acompanhamento claro']
+      title:'Resultado atual',
+      text:'O resultado é uma plataforma modular: o Portal centraliza a experiência, mas cada sistema continua fazendo bem o seu papel. Isso permite crescer por módulos, preservar segurança e evitar misturar responsabilidades diferentes em um único código.',
+      points:['Portal central','Demandas','Vision','Inventário','Central do Proprietário','Administração modular']
     },
     {
-      title:'Acesso ao sistema',
-      text:'E para fechar, aqui está o acesso direto ao sistema. O colaborador FIEMG pode usar o QR Code para entrar. Para abrir uma nova solicitação, utiliza o e-mail corporativo @fiemg.com.br e depois acompanha usando esse mesmo e-mail junto com o protocolo.',
-      points:['Escanear o QR Code','Usar e-mail @fiemg.com.br','Abrir uma solicitação','Acompanhar pelo protocolo']
+      title:'Acesso ao Portal',
+      text:'Para fechar, o QR Code agora aponta para o Portal Afonso Greco, que é a porta de entrada atual. Na Home ficam as informações e notícias. Na Área Interna, cada usuário entra e visualiza somente os módulos liberados para o seu perfil.',
+      points:['Acessar o Portal','Consultar notícias','Entrar na Área Interna','Abrir somente os módulos autorizados']
     }
   ];
 
