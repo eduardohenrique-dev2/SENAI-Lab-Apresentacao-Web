@@ -4,25 +4,25 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#0067B1">
-  <meta name="description" content="Apresentação do Sistema de Gestão de Demandas do SENAI Lab — SENAI Afonso Greco.">
-  <meta property="og:title" content="SENAI Lab — Sistema de Gestão de Demandas">
-  <meta property="og:description" content="Conheça o fluxo de solicitações, triagem, produção e acompanhamento do SENAI Lab.">
+  <meta name="description" content="Apresentação do ecossistema digital Afonso Greco e dos módulos SENAI Lab.">
+  <meta property="og:title" content="Portal Afonso Greco + SENAI Lab">
+  <meta property="og:description" content="Portal, autenticação modular, Gestão de Demandas, Vision, Inventário e administração central.">
   <meta property="og:type" content="website">
   <meta name="color-scheme" content="light">
-  <title>SENAI Lab — Apresentação</title>
+  <title>Portal Afonso Greco + SENAI Lab — Apresentação</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="presenter.css">
-  <link rel="stylesheet" href="enhancements.css">
+  <link rel="stylesheet" href="styles.css?v=20260918-ecosystem1">
+  <link rel="stylesheet" href="presenter.css?v=20260918-ecosystem1">
+  <link rel="stylesheet" href="enhancements.css?v=20260918-ecosystem1">
 </head>
 <body>
   <a class="skip-link" href="#s1">Pular para a apresentação</a>
 
   <header class="topbar" aria-label="Controles da apresentação">
     <a class="brand" href="#s1" aria-label="SENAI Lab — voltar ao início"><img src="assets/logo-senai-lab.svg" alt="SENAI Lab" class="brand-logo" width="154" height="50"></a>
-    <span class="unit">SENAI Afonso Greco</span>
+    <span class="unit">SENAI Afonso Greco • Ecossistema digital</span>
     <div class="top-actions"><span id="slideCounter" aria-live="polite">01 / 11</span><button id="fullscreenBtn" type="button" aria-label="Entrar em tela cheia" aria-pressed="false" title="Tela cheia (F)">⛶</button></div>
   </header>
 
@@ -34,115 +34,180 @@
   <main id="apresentacao">
     <section class="slide cover" id="s1" tabindex="-1">
       <div class="cover-copy reveal">
-        <p class="kicker">Sistema de Gestão de Demandas</p>
-        <h1>Uma forma mais simples de organizar o dia a dia do SENAI Lab.</h1>
-        <p class="lead">Centraliza solicitações, autorização, acompanhamento e operação da equipe em um único fluxo.</p>
-        <div class="tagline">Conectando pessoas, ideias e fabricação.</div>
+        <p class="kicker">Portal Afonso Greco + SENAI Lab</p>
+        <h1>Um ecossistema digital para organizar informação, serviços e gestão.</h1>
+        <p class="lead">O que começou com a gestão de demandas evoluiu para uma plataforma modular com Portal, acessos por perfil, Vision, Inventário, notícias e administração central.</p>
+        <div class="tagline">Informação, serviços e inovação em um só lugar.</div>
       </div>
-      <div class="cover-shot reveal delay">
-        <div class="shot-frame"><img src="assets/capa-sistema.jpg" alt="Tela inicial real do sistema SENAI Lab" width="1280" height="720" decoding="async" fetchpriority="high"></div>
-        <span class="shot-label">Tela inicial do sistema</span>
+      <div class="ecosystem-hero reveal delay" aria-label="Visão resumida do ecossistema">
+        <div class="portal-core">
+          <small>PORTA DE ENTRADA</small>
+          <strong>Portal Afonso Greco</strong>
+          <span>Home • Notícias • Área Interna</span>
+        </div>
+        <div class="ecosystem-ring">
+          <article><b>Demandas</b><small>Solicitação e gestão</small></article>
+          <article><b>Vision</b><small>Supervisão operacional</small></article>
+          <article><b>Inventário</b><small>Patrimônio e rastreabilidade</small></article>
+          <article><b>Permissões</b><small>Acesso por usuário</small></article>
+        </div>
       </div>
     </section>
 
     <section class="slide" id="s2" tabindex="-1">
       <div class="intro reveal">
-        <p class="kicker">Por que a plataforma existe?</p>
-        <h2>Menos informação espalhada. Mais organização.</h2>
-        <p class="lead">Quando cada pedido chega por um caminho diferente, acompanhar tudo fica mais difícil. A plataforma reúne o processo em um só fluxo, com critérios claros desde a entrada até a entrega.</p>
+        <p class="kicker">Evolução da ideia</p>
+        <h2>De um sistema isolado para uma plataforma integrada.</h2>
+        <p class="lead">Cada necessidade continua com seu próprio módulo, mas o Portal organiza a entrada, a comunicação e os acessos. Assim, a estrutura cresce sem transformar tudo em um sistema monolítico.</p>
       </div>
       <div class="before-after reveal delay">
-        <article class="before"><small>ANTES</small><strong>Mensagens, e-mails e pedidos soltos</strong><p>Difícil saber o que chegou, o que já foi alterado e em que etapa está.</p></article>
+        <article class="before"><small>ANTES</small><strong>Ferramentas acessadas separadamente</strong><p>Demandas, acompanhamento, inventário e comunicação existiam como pontos independentes de acesso.</p></article>
         <div class="arrow" aria-hidden="true">→</div>
-        <article class="after"><small>AGORA</small><strong>Uma plataforma única</strong><p>Cada solicitação fica registrada, recebe protocolo, passa por autorização e pode ser acompanhada até a conclusão.</p></article>
+        <article class="after"><small>AGORA</small><strong>Portal como ponto central</strong><p>Uma Home institucional reúne notícias e direciona cada usuário para os módulos liberados para o seu perfil.</p></article>
       </div>
     </section>
 
-    <section class="slide" id="s3" tabindex="-1">
-      <div class="intro reveal"><p class="kicker">Visão geral</p><h2>O fluxo é simples e tem uma etapa clara de autorização.</h2><p class="lead">O colaborador registra o que precisa. A Administração faz a triagem e, somente depois de autorizada, a demanda entra na operação da equipe do Lab.</p></div>
-      <div class="journey reveal delay">
-        <article><span>01</span><b>Solicitar</b><p>Colaborador FIEMG registra a necessidade.</p></article><i aria-hidden="true">→</i>
-        <article><span>02</span><b>Receber protocolo</b><p>O sistema identifica a solicitação com LAB-XXXX.</p></article><i aria-hidden="true">→</i>
-        <article><span>03</span><b>Autorizar</b><p>A Administração analisa e autoriza ou recusa.</p></article><i aria-hidden="true">→</i>
-        <article><span>04</span><b>Operar</b><p>A equipe recebe somente demandas autorizadas.</p></article><i aria-hidden="true">→</i>
-        <article><span>05</span><b>Concluir</b><p>Produção, histórico e acompanhamento até a entrega.</p></article>
-      </div>
-    </section>
-
-    <section class="slide two-col" id="s4" tabindex="-1">
+    <section class="slide two-col" id="s3" tabindex="-1">
       <div class="reveal">
-        <p class="kicker">Para quem solicita</p>
-        <h2>Abrir uma demanda leva poucos minutos.</h2>
-        <p class="lead">Não precisa criar conta. O acesso para novas solicitações é exclusivo para colaboradores FIEMG e exige o e-mail corporativo <strong>@fiemg.com.br</strong>.</p>
-        <div class="mini-list"><span>Nome e e-mail @fiemg.com.br</span><span>Tipo de serviço</span><span>Descrição do que precisa</span><span>Quantidade e data</span><span>Arquivos do projeto</span></div>
+        <p class="kicker">Portal Afonso Greco</p>
+        <h2>A entrada pública e a área interna agora convivem no mesmo ecossistema.</h2>
+        <p class="lead">A Home apresenta informações e notícias da unidade. Para quem precisa trabalhar nos sistemas, a Área Interna organiza os módulos em um menu único e responsivo.</p>
+        <div class="mini-list"><span>Home institucional</span><span>Notícias atualizadas</span><span>Área Interna</span><span>Menu modular</span><span>Modo claro e escuro</span></div>
       </div>
-      <div class="fake-form reveal delay" aria-label="Exemplo visual do formulário de solicitação">
-        <div class="form-head"><strong>Nova solicitação</strong><span>FIEMG</span></div>
-        <label>E-mail corporativo<div>nome@fiemg.com.br</div></label>
-        <label>Serviço<div>Prototipagem</div></label>
-        <label>Descreva sua necessidade<div class="textarea">Preciso produzir uma peça para apresentação...</div></label>
-        <div class="form-row"><label>Quantidade<div>1</div></label><label>Data<div>01/10/2026</div></label></div>
-        <div class="fake-submit" aria-hidden="true">Enviar solicitação</div>
+      <div class="portal-preview reveal delay">
+        <header><span>PORTAL AFONSO GRECO</span><b>Visão geral</b></header>
+        <div class="portal-preview__body">
+          <aside><strong>Portal</strong><span>Início</span><span>Notícias</span><strong>SENAI Lab</strong><span>Gestão de Demandas</span><span>Vision</span><span>Inventário</span></aside>
+          <div><small>ACESSO PERSONALIZADO</small><h3>Módulos disponíveis</h3><p>O usuário visualiza somente os acessos liberados para o seu perfil.</p><div class="preview-modules"><i>Demandas</i><i>Vision</i><i>Inventário</i></div></div>
+        </div>
       </div>
+    </section>
+
+    <section class="slide" id="s4" tabindex="-1">
+      <div class="intro reveal">
+        <p class="kicker">Autenticação e permissões</p>
+        <h2>O menu muda de acordo com quem entrou.</h2>
+        <p class="lead">A autorização central define quais módulos cada usuário pode visualizar ou administrar. A proteção não fica somente na interface: as áreas internas também consultam a permissão antes de manter o acesso.</p>
+      </div>
+      <div class="access-matrix reveal delay">
+        <article><span>PROPRIETÁRIO</span><b>Visão completa</b><p>Central do Proprietário, gestão e administração dos módulos.</p></article>
+        <article><span>GESTÃO</span><b>Acesso operacional</b><p>Permissões conforme a função e necessidade de trabalho.</p></article>
+        <article><span>INSTRUTOR / EQUIPE</span><b>Somente o necessário</b><p>O menu exibe apenas os módulos liberados para aquele usuário.</p></article>
+        <article><span>CONTROLE</span><b>Exceções por usuário</b><p>Um administrador pode liberar ou bloquear módulos individualmente.</p></article>
+      </div>
+      <p class="caption reveal delay2">Os módulos continuam independentes e podem manter suas próprias sessões; o Portal centraliza a autorização e a descoberta dos acessos.</p>
     </section>
 
     <section class="slide two-col" id="s5" tabindex="-1">
       <div class="reveal">
-        <p class="kicker">Acompanhamento</p>
-        <h2>Depois do envio, a pessoa não fica no escuro.</h2>
-        <p class="lead">Com o protocolo e o mesmo e-mail corporativo usado no cadastro, ela consulta o andamento sem precisar entrar em contato com a equipe toda hora — inclusive enquanto aguarda a autorização inicial.</p>
-        <div class="protocol-pill">LAB-0001</div>
+        <p class="kicker">Módulo 01 • Gestão de Demandas</p>
+        <h2>Da solicitação até a operação da equipe.</h2>
+        <p class="lead">O colaborador registra a necessidade, recebe um protocolo e acompanha o andamento. A Administração faz a triagem e somente as demandas autorizadas chegam à equipe do SENAI Lab.</p>
+        <div class="mini-list"><span>Solicitação pública</span><span>Protocolo LAB-XXXX</span><span>Triagem</span><span>Equipe</span><span>Área do Proprietário</span></div>
       </div>
-      <div class="status-track reveal delay" aria-label="Exemplo do andamento de uma demanda"><span class="done">Solicitação enviada</span><i aria-hidden="true"></i><span class="active">Aguardando autorização</span><i aria-hidden="true"></i><span>Em análise</span><i aria-hidden="true"></i><span>Em produção</span><i aria-hidden="true"></i><span>Finalizado</span></div>
+      <div class="flow-stack reveal delay">
+        <article><span>01</span><b>Solicitar</b><p>Entrada simples para colaboradores.</p></article>
+        <article><span>02</span><b>Autorizar</b><p>Administração decide antes da operação.</p></article>
+        <article><span>03</span><b>Produzir</b><p>Equipe atualiza status, prioridade e equipamento.</p></article>
+        <article><span>04</span><b>Acompanhar</b><p>Histórico e consulta por protocolo.</p></article>
+      </div>
     </section>
 
     <section class="slide two-col" id="s6" tabindex="-1">
       <div class="reveal">
-        <p class="kicker">Acesso interno</p>
-        <h2>Cada perfil enxerga somente o que precisa para trabalhar.</h2>
-        <p class="lead">O acesso é individual e autenticado. A Administração faz a triagem das novas solicitações; a equipe operacional trabalha apenas com as demandas já autorizadas.</p>
-        <div class="people"><span>Administração</span><span>Equipe do Lab</span><span>Acesso autenticado</span></div>
+        <p class="kicker">Módulo 02 • SENAI Lab Vision</p>
+        <h2>Uma visão operacional feita para ficar ligada no laboratório.</h2>
+        <p class="lead">O Vision transforma as demandas autorizadas em um painel visual de produção. A TV é somente leitura, enquanto a gestão acontece em uma área protegida do Proprietário.</p>
+        <div class="mini-list"><span>Tempo real</span><span>Fallback automático</span><span>5 status</span><span>6 categorias</span><span>QR por demanda</span></div>
       </div>
-      <div class="mini-dashboard reveal delay"><header><b>Fluxo interno</b><small>Triagem + operação</small></header><div class="stats"><article><small>Aguardando decisão</small><strong>1</strong></article><article><small>Em análise</small><strong>0</strong></article><article><small>Em produção</small><strong>0</strong></article><article><small>Finalizadas</small><strong>0</strong></article></div><div class="dash-line"><span>LAB-0001</span><b>Prototipagem</b><em>Aguardando autorização</em></div></div>
+      <div class="vision-board reveal delay">
+        <header><b>VISION</b><span>Online</span></header>
+        <div class="vision-columns"><strong>Recebidas</strong><strong>Análise</strong><strong>Produção</strong><strong>Validação</strong><strong>Finalizadas</strong></div>
+        <div class="vision-lane"><span>Impressão 3D</span><article><b>LAB-0001</b><small>Em produção</small></article></div>
+        <div class="vision-lane"><span>Eletrônica</span></div>
+        <div class="vision-lane"><span>Geral</span></div>
+      </div>
     </section>
 
     <section class="slide" id="s7" tabindex="-1">
-      <div class="intro reveal"><p class="kicker">Gestão da demanda</p><h2>Depois da autorização, cada pedido entra com clareza na operação.</h2><p class="lead">Qualquer integrante autorizado da equipe pode atuar na demanda, e o sistema registra no histórico quem realizou cada alteração.</p></div>
-      <div class="manage-grid reveal delay"><article><span>STATUS</span><b>Em análise</b></article><article><span>PRIORIDADE</span><b>Alta</b></article><article><span>EQUIPAMENTO</span><b>BAMBU-01</b></article><article><span>HISTÓRICO</span><b>Ação identificada</b></article></div>
-      <p class="caption reveal delay2">As alterações ficam vinculadas à solicitação com data, ação realizada e usuário que executou a mudança.</p>
+      <div class="intro reveal">
+        <p class="kicker">Módulo 03 • Inventário</p>
+        <h2>Patrimônio, estoque e histórico no mesmo sistema.</h2>
+        <p class="lead">O Inventário amplia a rastreabilidade do laboratório: cadastro de itens, localização física, movimentações, empréstimos, manutenção, QR Code, relatórios e inventário físico.</p>
+      </div>
+      <div class="inventory-grid reveal delay">
+        <article><span>01</span><b>Itens e patrimônio</b><p>Ficha completa com código, patrimônio, categoria, localização e status.</p></article>
+        <article><span>02</span><b>Empréstimos</b><p>Retirada, devolução, prazo e situação do equipamento.</p></article>
+        <article><span>03</span><b>Movimentações</b><p>Entrada, saída, transferência, manutenção, baixa e ajustes.</p></article>
+        <article><span>04</span><b>Importação</b><p>Planilhas e PDFs podem ser analisados antes da confirmação, com reimportação e histórico de lotes.</p></article>
+        <article><span>05</span><b>QR Code</b><p>Acesso rápido à identificação e às ações permitidas para cada item.</p></article>
+        <article><span>06</span><b>Auditoria</b><p>Histórico individual transforma o patrimônio em uma linha do tempo rastreável.</p></article>
+      </div>
     </section>
 
     <section class="slide two-col" id="s8" tabindex="-1">
-      <div class="reveal"><p class="kicker">Fila de produção</p><h2>Quando o equipamento é o mesmo, existe uma ordem definida.</h2><p class="lead">Para demandas do mesmo equipamento e da mesma data, quem solicitou primeiro fica na frente. É uma regra simples, objetiva e fácil de explicar.</p><div class="rule">mesmo equipamento + mesma data = ordem de criação</div></div>
-      <div class="queue reveal delay" aria-label="Exemplo de fila de produção"><article><strong>01</strong><span>LAB-0001</span></article><article><strong>02</strong><span>LAB-0002</span></article><article><strong>03</strong><span>LAB-0003</span></article><article><strong>04</strong><span>LAB-0004</span></article></div>
+      <div class="reveal">
+        <p class="kicker">Central do Proprietário</p>
+        <h2>Os acessos de gestão ficam reunidos em um único lugar.</h2>
+        <p class="lead">O perfil Proprietário recebe uma área exclusiva no Portal para chegar rapidamente às partes administrativas de cada sistema, sem expor essas opções aos demais usuários.</p>
+        <div class="rule">perfil Proprietário = central exclusiva de gestão</div>
+      </div>
+      <div class="owner-hub reveal delay">
+        <header><small>ACESSO EXCLUSIVO</small><strong>Central do Proprietário</strong></header>
+        <a><span>Demandas</span><b>Gestão do Proprietário</b></a>
+        <a><span>Vision</span><b>Vision Gestão</b></a>
+        <a><span>Inventário</span><b>Administração</b></a>
+        <a><span>Portal</span><b>Notícias e Permissões</b></a>
+      </div>
     </section>
 
     <section class="slide" id="s9" tabindex="-1">
-      <div class="intro reveal"><p class="kicker">Comunicação, histórico e controle</p><h2>O sistema ajuda a equipe a não perder contexto.</h2><p class="lead">Decisões e mudanças importantes ficam registradas, o solicitante pode receber atualizações por e-mail e o acesso interno é separado por nível de permissão.</p></div>
-      <div class="three-points reveal delay"><article><span>01</span><b>Notificações</b><p>Atualizações importantes podem chegar por e-mail ao longo do atendimento.</p></article><article><span>02</span><b>Histórico</b><p>O sistema registra a ação e quem realizou cada alteração ou decisão.</p></article><article><span>03</span><b>Privacidade e acesso</b><p>Dados, anexos e áreas internas seguem regras próprias de acesso e autorização.</p></article></div>
+      <div class="intro reveal">
+        <p class="kicker">Comunicação e governança</p>
+        <h2>O Portal também organiza conteúdo e quem pode acessar cada módulo.</h2>
+        <p class="lead">Notícias são publicadas por uma área administrativa própria, enquanto o painel de Usuários e Permissões permite controlar os acessos do ecossistema sem depender de alterações manuais no front-end.</p>
+      </div>
+      <div class="three-points reveal delay">
+        <article><span>01</span><b>Notícias</b><p>Criação, edição, destaque, rascunho, agendamento e publicação na Home.</p></article>
+        <article><span>02</span><b>Permissões</b><p>Acesso por perfil com possibilidade de liberar ou bloquear módulos por usuário.</p></article>
+        <article><span>03</span><b>Segurança</b><p>Rotas internas e ações sensíveis continuam protegidas no banco e por regras específicas de cada módulo.</p></article>
+      </div>
     </section>
 
     <section class="slide final" id="s10" tabindex="-1">
-      <div class="final-copy reveal"><p class="kicker light">Resultado</p><h2>Uma ferramenta simples para deixar o Lab mais organizado.</h2><p class="lead light">A proposta é facilitar para os colaboradores FIEMG que solicitam e dar mais clareza e controle para quem faz a triagem e para quem executa.</p><div class="final-points"><span>Uso interno FIEMG</span><span>Triagem administrativa</span><span>Demandas centralizadas</span><span>Acompanhamento claro</span><span>Histórico por ação</span></div><a href="https://senai-lab-afonso-greco.vercel.app/" target="_blank" rel="noopener noreferrer">Acessar o sistema ↗</a></div>
-      <div class="final-mark reveal delay"><span class="senai big">SENAI</span><span class="lab big">Lab</span><small>Conectando pessoas, ideias e fabricação.</small></div>
+      <div class="final-copy reveal">
+        <p class="kicker light">Resultado atual</p>
+        <h2>Uma plataforma modular, com cada sistema fazendo bem o seu papel.</h2>
+        <p class="lead light">O Portal centraliza a experiência sem misturar responsabilidades. Demandas, Vision e Inventário continuam especializados, enquanto autenticação, descoberta de módulos, comunicação e gestão ficam mais organizadas.</p>
+        <div class="final-points"><span>Portal central</span><span>Acesso por perfil</span><span>Demandas</span><span>Vision</span><span>Inventário</span><span>Central do Proprietário</span><span>Notícias</span><span>Permissões</span></div>
+        <a href="https://portal-afonso-greco.vercel.app/">Acessar o Portal →</a>
+      </div>
+      <div class="architecture reveal delay">
+        <div class="architecture-core"><strong>PORTAL</strong><small>Afonso Greco</small></div>
+        <span></span>
+        <div class="architecture-modules"><b>Demandas</b><b>Vision</b><b>Inventário</b><b>Administração</b></div>
+      </div>
     </section>
 
     <section class="slide access-slide" id="s11" tabindex="-1">
       <div class="access-copy reveal">
-        <p class="kicker">Agora é só acessar</p>
-        <h2>Conheça o SENAI Lab na prática.</h2>
-        <p class="lead">Colaboradores FIEMG podem apontar a câmera para o QR Code e registrar uma solicitação usando o e-mail corporativo @fiemg.com.br.</p>
-        <a class="access-link" href="https://senai-lab-afonso-greco.vercel.app/" target="_blank" rel="noopener noreferrer">senai-lab-afonso-greco.vercel.app ↗</a>
+        <p class="kicker">Conheça na prática</p>
+        <h2>O Portal Afonso Greco agora é a porta de entrada.</h2>
+        <p class="lead">A Home reúne comunicação e acessos. Na Área Interna, cada usuário visualiza somente os módulos liberados para o seu perfil.</p>
+        <a class="access-link" href="https://portal-afonso-greco.vercel.app/">portal-afonso-greco.vercel.app →</a>
+        <div class="final-points access-points"><span>Home</span><span>Notícias</span><span>Área Interna</span><span>SENAI Lab</span></div>
       </div>
-      <div class="poster-frame reveal delay">
-        <img src="assets/cartaz-acesso.jpg" alt="Cartaz de acesso ao SENAI Lab com QR Code" width="768" height="1086" loading="lazy" decoding="async">
+      <div class="portal-qr reveal delay">
+        <div class="portal-qr__frame"><img src="https://api.qrserver.com/v1/create-qr-code/?size=520x520&margin=18&data=https%3A%2F%2Fportal-afonso-greco.vercel.app%2F" alt="QR Code para acessar o Portal Afonso Greco" width="520" height="520" loading="lazy"></div>
+        <strong>Portal Afonso Greco</strong>
+        <span>Aponte a câmera para acessar</span>
       </div>
     </section>
   </main>
 
   <div class="controls" aria-label="Avançar ou voltar slides"><button id="prevSlide" type="button" aria-label="Slide anterior">←</button><button id="nextSlide" type="button" aria-label="Próximo slide">→</button></div>
-  <script src="script.js" defer></script>
-  <script src="enhancements.js" defer></script>
+  <script src="script.js?v=20260918-ecosystem1" defer></script>
+  <script src="enhancements.js?v=20260918-ecosystem1" defer></script>
   <script src="./js/logo-home.js?v=20260918-1"></script>
 </body>
 </html>
