@@ -26,9 +26,9 @@
       <h1 id="joinTitle">Controle os slides pelo celular.</h1>
       <p>No notebook, toque no botão <strong>📱</strong>. Depois digite aqui o código exibido na tela.</p>
       <label for="sessionInput">Código da sessão</label>
-      <input id="sessionInput" maxlength="6" minlength="4" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="ABC123" aria-describedby="sessionHelp">
+      <input id="sessionInput" maxlength="26" minlength="20" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="Cole o código ou abra pelo QR" aria-describedby="sessionHelp">
       <button id="connectBtn" type="button" class="connect-btn">Conectar à apresentação</button>
-      <small id="sessionHelp">O código vale somente para esta apresentação.</small>
+      <small id="sessionHelp">O código é aleatório e vale somente para esta apresentação. O QR preenche automaticamente.</small>
     </section>
 
     <section id="presenterView" class="presenter-view" hidden aria-label="Notas do apresentador">
@@ -61,7 +61,7 @@
     <button id="nextBtn" type="button" class="main-control primary">Próximo →</button>
   </nav>
 
-  <script src="controle.js"></script>
-  <script src="presenter-notes.js"></script>
+  <script src="presenter-notes.js?v=20260921-hardening1"></script>
+  <script src="controle.js?v=20260921-hardening1"></script>
 </body>
 </html>
