@@ -129,3 +129,15 @@
   .brand{width:132px;height:42px}
   .final-mark::before{margin-left:0;width:min(420px,80vw)}
 }
+
+.remote-session-code{
+  font-size:clamp(16px,2.5vw,24px);
+  line-height:1.35;
+  letter-spacing:.08em;
+  overflow-wrap:anywhere;
+}
+.remote-qr canvas,
+.remote-qr img{
+  max-width:100%;
+  height:auto!important;
+}
