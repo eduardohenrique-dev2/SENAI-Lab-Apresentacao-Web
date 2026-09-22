@@ -80,14 +80,14 @@ dots.forEach((dot,index)=>dot.addEventListener('click',()=>{currentIndex=index})
 
 function generateSession(){
   const chars='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
-  let code='';
-  for(let i=0;i<6;i++)code+=chars[Math.floor(Math.random()*chars.length)];
-  return code;
+  const bytes=new Uint8Array(26);
+  crypto.getRandomValues(bytes);
+  return [...bytes].map(byte=>chars[byte%chars.length]).join('');
 }
 
 async function createRealtimeClient(){
   if(realtimeClient)return realtimeClient;
-  const {createClient}=await import('https://esm.sh/@supabase/supabase-js@2');
+  const {createClient}=await import('https://esm.sh/@supabase/supabase-js@2.115.0');
   realtimeClient=createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
   return realtimeClient;
 }
@@ -126,7 +126,7 @@ function buildRemoteUi(){
             <button class="secondary" id="newRemoteSession">Nova sessão</button>
           </div>
         </div>
-        <div class="remote-qr"><img id="remoteQr" alt="QR Code para abrir o controle no celular"></div>
+        <div class="remote-qr" id="remoteQr" aria-label="QR Code para abrir o controle no celular"></div>
       </div>
       <p class="remote-help">No celular, escaneie o QR Code. Sua tela mostrará as falas do slide atual e os botões <strong>Voltar</strong> e <strong>Próximo</strong>. O público continua vendo somente a apresentação.</p>
     </div>`;
@@ -154,10 +154,10 @@ function refreshRemoteModal(){
   const link=document.getElementById('remoteLink');
   const openLink=document.getElementById('openRemoteLink');
   const qr=document.getElementById('remoteQr');
-  if(code)code.textContent=remoteSession;
+  if(code)code.textContent=remoteSession.replace(/(.{4})/g,'$1 ').trim();
   if(link)link.textContent=url;
   if(openLink)openLink.href=url;
-  if(qr)qr.src=`https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=8&data=${encodeURIComponent(url)}`;
+  renderQr(qr,url,220);
   updateRemoteStatus();
 }
 
@@ -178,6 +178,22 @@ function updateRemoteStatus(){
     status.classList.remove('online');
     btn.classList.remove('connected');
   }
+}
+
+function renderQr(container,text,size){
+  if(!container||!window.QRCode)return;
+  container.replaceChildren();
+  new window.QRCode(container,{
+    text,
+    width:size,
+    height:size,
+    correctLevel:window.QRCode.CorrectLevel.M
+  });
+}
+
+function renderPortalQr(){
+  const container=document.getElementById('portalQr');
+  if(container)renderQr(container,'https://portal-afonso-greco.vercel.app/',420);
 }
 
 async function connectRemoteSession(code){
@@ -258,4 +274,5 @@ async function startNewRemoteSession(){
 }
 
 buildRemoteUi();
+renderPortalQr();
 updateUI(0);
