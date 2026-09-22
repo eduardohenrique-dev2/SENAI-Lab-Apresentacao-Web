@@ -201,6 +201,22 @@ function renderPortalQr(){
   if(container)renderQr(container,'https://portal-afonso-greco.vercel.app/',420);
 }
 
+const remoteEventTimes=[];
+function allowRemoteEvent(payload){
+  const now=Date.now();
+  const sentAt=Number(payload?.at||0);
+
+  if(sentAt&&Math.abs(now-sentAt)>15000)return false;
+
+  while(remoteEventTimes.length&&now-remoteEventTimes[0]>1000){
+    remoteEventTimes.shift();
+  }
+
+  if(remoteEventTimes.length>=12)return false;
+  remoteEventTimes.push(now);
+  return true;
+}
+
 async function connectRemoteSession(code){
   remoteSession=code||remoteSession||generateSession();
   sessionStorage.setItem('senai-presenter-session',remoteSession);
@@ -217,16 +233,29 @@ async function connectRemoteSession(code){
     remoteChannel=client.channel(`senai-apresentacao:${remoteSession}`);
     remoteChannel
       .on('broadcast',{event:'control'},({payload})=>{
-        if(payload?.action==='goto'&&Number.isInteger(payload.index)){
+        if(!allowRemoteEvent(payload))return;
+        if(
+          payload?.action==='goto' &&
+          Number.isInteger(payload.index) &&
+          payload.index>=0 &&
+          payload.index<slides.length
+        ){
           goToSlide(payload.index);
           setTimeout(broadcastState,180);
         }
       })
-      .on('broadcast',{event:'request-state'},()=>broadcastState())
-      .on('broadcast',{event:'controller-online'},async()=>{
+      .on('broadcast',{event:'request-state'},({payload})=>{
+        if(allowRemoteEvent(payload))broadcastState();
+      })
+      .on('broadcast',{event:'controller-online'},async({payload})=>{
+        if(!allowRemoteEvent(payload))return;
         controllerOnline=true;
         updateRemoteStatus();
-        await remoteChannel.send({type:'broadcast',event:'presentation-online',payload:{at:Date.now()}});
+        await remoteChannel.send({
+          type:'broadcast',
+          event:'presentation-online',
+          payload:{at:Date.now()}
+        });
         await broadcastState();
       });
 
