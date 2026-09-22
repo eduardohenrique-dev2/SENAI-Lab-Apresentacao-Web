@@ -1,64 +1,7 @@
 const SUPABASE_URL='https://lnzcrdyqqumvrlgbcofd.supabase.co';
 const SUPABASE_KEY='sb_publishable_Fc3j2jCiD5FN8l1t6dI4Rg_9WqeVLWP';
 
-const notes=[
-  {
-    title:'Abertura',
-    text:'Pra começar, eu queria mostrar uma solução que a gente montou pensando no dia a dia do SENAI Lab. A ideia foi pegar as solicitações que antes podiam chegar de vários jeitos e colocar tudo em um fluxo mais simples, tanto para quem pede quanto para quem vai atender.',
-    points:['Centralizar as solicitações','Facilitar para o solicitante','Dar mais organização para a equipe']
-  },
-  {
-    title:'Por que criar a plataforma?',
-    text:'Hoje um pedido pode chegar numa conversa, por mensagem, por e-mail ou pessoalmente. Quando isso acontece, a informação fica espalhada e é fácil perder contexto. Então a plataforma entra justamente para reunir tudo em um lugar só, sem transformar o processo em algo burocrático.',
-    points:['Informação espalhada dificulta o controle','Um único canal deixa o processo mais claro','A ideia é organizar, não complicar']
-  },
-  {
-    title:'Como funciona no geral',
-    text:'O fluxo é bem direto. O colaborador registra o que precisa usando o e-mail corporativo da FIEMG, o sistema gera um protocolo e a equipe recebe essa demanda. Depois a gente analisa, atualiza status, prioridade e equipamento, até chegar na produção e na conclusão do atendimento.',
-    points:['Solicitação com e-mail FIEMG','Protocolo automático','Análise da equipe','Produção e conclusão']
-  },
-  {
-    title:'Como o solicitante usa',
-    text:'Para quem vai solicitar, eu procurei deixar o processo bem simples. Não precisa criar conta, mas a nova demanda é exclusiva para colaboradores FIEMG. O sistema aceita somente e-mail corporativo terminado em @fiemg.com.br. Depois a pessoa explica o que precisa, informa quantidade e data e pode anexar arquivos do projeto.',
-    points:['Sem criação de conta','Somente @fiemg.com.br','Formulário curto e objetivo','Arquivos podem ir junto com o pedido']
-  },
-  {
-    title:'Como acompanhar',
-    text:'Depois de enviar, a pessoa recebe um protocolo. Com esse protocolo e o mesmo e-mail corporativo usado na solicitação, ela consegue consultar o andamento. Isso evita aquela necessidade de ficar perguntando toda hora se já foi analisado ou se já entrou em produção.',
-    points:['Consulta por protocolo + e-mail','Mesmo e-mail corporativo do envio','Mais autonomia para quem solicitou']
-  },
-  {
-    title:'Área da equipe',
-    text:'Na parte interna a lógica muda um pouco, porque aqui o acesso é individual e só entra quem está autorizado. O painel dá uma visão rápida do que está aberto, do que está em análise, do que está em produção e do que já foi finalizado.',
-    points:['Acesso individual','Somente equipe autorizada','Visão rápida das demandas']
-  },
-  {
-    title:'Gestão de cada demanda',
-    text:'Dentro de cada pedido, qualquer integrante autorizado consegue atualizar o que realmente importa para a operação. A gente define status, prioridade e equipamento. Em vez de existir um responsável fixo, o histórico registra quem realizou cada mudança, com a ação e o momento em que ela aconteceu.',
-    points:['Status','Prioridade','Equipamento','Histórico identifica quem alterou']
-  },
-  {
-    title:'Fila de produção',
-    text:'Também tem uma lógica simples para organizar a fila. Quando duas demandas usam o mesmo equipamento e estão previstas para a mesma data, quem solicitou primeiro fica na frente. É um critério objetivo e fácil de explicar para todo mundo.',
-    points:['Mesmo equipamento','Mesma data','Ordem de criação define a fila']
-  },
-  {
-    title:'Comunicação e histórico',
-    text:'Outra coisa importante é não perder o contexto do atendimento. As mudanças ficam registradas no histórico com o usuário que executou cada ação, e algumas atualizações são enviadas por e-mail. Também existe o cuidado com privacidade, porque a pessoa recebe o aviso antes de enviar os dados.',
-    points:['Notificações por e-mail','Histórico por ação e usuário','Aviso de privacidade']
-  },
-  {
-    title:'Fechamento',
-    text:'No fim, a proposta é bem simples: oferecer um canal interno para os colaboradores FIEMG e dar mais clareza para quem gerencia. Em vez de informação espalhada, a gente passa a ter demanda, andamento, equipamento e histórico reunidos no mesmo lugar.',
-    points:['Uso interno FIEMG','Mais organização','Acompanhamento mais claro','Menos controle paralelo']
-  },
-  {
-    title:'Acesso ao sistema',
-    text:'E para fechar, aqui está o acesso direto. O colaborador FIEMG pode apontar a câmera para o QR Code e entrar no sistema. Para abrir uma nova solicitação, é obrigatório usar o e-mail corporativo @fiemg.com.br. Depois, o mesmo e-mail junto com o protocolo permite acompanhar a demanda.',
-    points:['Escanear o QR Code','Usar e-mail @fiemg.com.br','Abrir uma solicitação','Acompanhar uma demanda existente']
-  }
-];
-
+const notes=window.SENAI_PRESENTER_NOTES||[];
 const joinView=document.getElementById('joinView');
 const presenterView=document.getElementById('presenterView');
 const mobileControls=document.getElementById('mobileControls');
@@ -88,13 +31,13 @@ let timerId=null;
 
 async function createRealtimeClient(){
   if(client)return client;
-  const {createClient}=await import('https://esm.sh/@supabase/supabase-js@2');
+  const {createClient}=await import('https://esm.sh/@supabase/supabase-js@2.115.0');
   client=createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:false,autoRefreshToken:false,detectSessionInUrl:false}});
   return client;
 }
 
 function normalizeSession(value){
-  return String(value||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,6);
+  return String(value||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,26);
 }
 
 function setBadge(text,online=false){
@@ -109,7 +52,11 @@ function render(){
   mobileProgress.style.width=`${((currentIndex+1)/total)*100}%`;
   speakerTitle.textContent=note.title;
   speakerText.textContent=note.text;
-  speakerPoints.innerHTML=note.points.map(point=>`<li>${point}</li>`).join('');
+  speakerPoints.replaceChildren(...note.points.map(point=>{
+    const li=document.createElement('li');
+    li.textContent=point;
+    return li;
+  }));
   prevBtn.disabled=currentIndex===0;
   homeBtn.disabled=currentIndex===0;
   nextBtn.disabled=currentIndex>=total-1;
@@ -128,7 +75,7 @@ function startTimer(){
 
 async function connect(sessionCode){
   const code=normalizeSession(sessionCode);
-  if(code.length<4){
+  if(code.length<20){
     sessionInput.focus();
     return;
   }
