@@ -182,7 +182,7 @@
         <div class="final-points access-points"><span>Home</span><span>Notícias</span><span>Área Interna</span><span>SENAI Lab</span></div>
       </div>
       <div class="portal-qr reveal delay">
-        <div class="portal-qr__frame"><img src="https://api.qrserver.com/v1/create-qr-code/?size=520x520&margin=18&data=https%3A%2F%2Fportal-afonso-greco.vercel.app%2F" alt="QR Code para acessar o Portal Afonso Greco" width="520" height="520" loading="lazy"></div>
+        <div class="portal-qr__frame"><div id="portalQr" aria-label="QR Code para acessar o Portal Afonso Greco"></div></div>
         <strong>Portal Afonso Greco</strong>
         <span>Aponte a câmera para acessar</span>
       </div>
@@ -190,7 +190,8 @@
   </main>
 
   <div class="controls" aria-label="Avançar ou voltar slides"><button id="prevSlide" type="button" aria-label="Slide anterior">←</button><button id="nextSlide" type="button" aria-label="Próximo slide">→</button></div>
-  <script src="script.js?v=20260918-ecosystem2" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js" defer></script>
+  <script src="script.js?v=20260921-hardening1" defer></script>
   <script src="enhancements.js?v=20260918-ecosystem2" defer></script>
   <script src="./js/logo-home.js?v=20260918-1"></script>
 </body>
