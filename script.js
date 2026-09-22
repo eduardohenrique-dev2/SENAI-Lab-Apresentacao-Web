@@ -12,7 +12,12 @@ let currentIndex=0;
 
 let realtimeClient=null;
 let remoteChannel=null;
-let remoteSession=sessionStorage.getItem('senai-presenter-session')||'';
+const REMOTE_SESSION_MAX_AGE=4*60*60*1000;
+const storedRemoteSession=sessionStorage.getItem('senai-presenter-session')||'';
+const storedRemoteAt=Number(sessionStorage.getItem('senai-presenter-session-at')||0);
+let remoteSession=(storedRemoteSession&&Date.now()-storedRemoteAt<REMOTE_SESSION_MAX_AGE)
+  ?storedRemoteSession
+  :'';
 let remoteReady=false;
 let controllerOnline=false;
 
@@ -199,6 +204,7 @@ function renderPortalQr(){
 async function connectRemoteSession(code){
   remoteSession=code||remoteSession||generateSession();
   sessionStorage.setItem('senai-presenter-session',remoteSession);
+  sessionStorage.setItem('senai-presenter-session-at',String(Date.now()));
   controllerOnline=false;
   remoteReady=false;
   updateRemoteStatus();
@@ -269,6 +275,7 @@ async function copyRemoteLink(){
 async function startNewRemoteSession(){
   remoteSession=generateSession();
   sessionStorage.setItem('senai-presenter-session',remoteSession);
+  sessionStorage.setItem('senai-presenter-session-at',String(Date.now()));
   refreshRemoteModal();
   await connectRemoteSession(remoteSession);
 }
