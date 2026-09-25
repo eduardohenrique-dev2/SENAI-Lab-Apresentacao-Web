@@ -94,3 +94,58 @@ main{padding-top:0}.slide{height:100vh;min-height:720px;scroll-snap-align:start;
   }
   .cover-pillars article{padding:10px 12px}
 }
+
+
+/* Assinaturas S na apresentação */
+.cover::after,
+.final::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background-image:
+    url("assets/ativo-1s.svg"),
+    url("assets/ativo-2s.svg"),
+    url("assets/ativo-3s.svg");
+  background-repeat:no-repeat;
+  background-size:280px auto,430px auto,220px auto;
+  background-position:
+    left -110px bottom -115px,
+    right -135px top -125px,
+    right 34px bottom -105px;
+  opacity:.065;
+}
+.cover-copy,
+.cover-shot,
+.final-copy,
+.final-mark{
+  position:relative;
+  z-index:1;
+}
+.final::before{
+  opacity:.105;
+}
+@media(max-width:1050px){
+  .cover::after,
+  .final::before{
+    background-size:210px auto,320px auto,165px auto;
+    background-position:
+      left -86px bottom -92px,
+      right -108px top -88px,
+      right -20px bottom -88px;
+    opacity:.052;
+  }
+  .final::before{opacity:.08}
+}
+@media(max-width:650px){
+  .cover::after{
+    background-size:155px auto,230px auto,120px auto;
+    background-position:
+      left -66px bottom -65px,
+      right -86px top -58px,
+      right -24px bottom -62px;
+    opacity:.04;
+  }
+  .final::before{display:none}
+}
